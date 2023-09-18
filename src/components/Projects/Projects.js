@@ -1,6 +1,8 @@
 import { gsap, } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+console.log(`hello1`);
+
 gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
     scrollTrigger: {
