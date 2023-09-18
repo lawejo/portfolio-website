@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard/ProjectCard.astro";
 import projects from "../../data/projects.json";
 ---
 
-<section id="box" class="grid grid-rows-[100px_auto] w-full h-full mt-6  px-24">
+<section id="box" class="box grid grid-rows-[100px_auto] w-full h-full mt-6  px-24">
   <article class="h-fit row-start-1 col-start-1">
     <h2 class="text-5xl font-bold font-bodyfont text-center">My Recent Work</h2>
   </article>
@@ -24,26 +24,23 @@ import projects from "../../data/projects.json";
           />
         ))
       }
-      <!-- <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard /> -->
     </article>
   </div>
 </section>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script> -->
 <script>
-  import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
   scrollTrigger:{
-    trigger:'#box',
+    trigger:"#box",
     start:"top center",
-    end: '180px center',
+    end: '140px center',
     scrub:true,
-    markers:false
+    markers:true
   }
 })
 
@@ -51,9 +48,9 @@ let tl2 = gsap.timeline({
   scrollTrigger:{
     trigger:'#box',
     start:"top center",
-    end: '250px center',
+    end: '210px center',
     scrub:true,
-    markers:false
+    markers:true
   }
 })
 
@@ -61,17 +58,19 @@ let tl3 = gsap.timeline({
   scrollTrigger:{
     trigger:'#box',
     start:"top center",
-    end: '320px center',
+    end: '230px center',
     scrub:true,
-    markers:false
+    markers:true
   }
 })
 
 tl.from('#project_1',{
   y:800
+ 
 })
 tl2.from('#project_2',{
   y:800
+
 })
 tl3.from('#project_3',{
   y:800
@@ -79,12 +78,18 @@ tl3.from('#project_3',{
 
 
 
+//tl.from('#project_1',{
+//   x:-1000
+ 
+// })
+// tl2.from('#project_2',{
+//   y:800
 
-
-
-
-  // Smooth scroll
-  const lenis = new Lenis()
+// })
+// tl3.from('#project_3',{
+//   x:1000
+// })
+const lenis = new Lenis()
 
 lenis.on('scroll', (e) => {
   console.log(e)
@@ -96,7 +101,6 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf)
-
-
-
 </script>
+
+
