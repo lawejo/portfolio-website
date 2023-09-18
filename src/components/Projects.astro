@@ -1,0 +1,102 @@
+---
+import ProjectCard from "./ProjectCard/ProjectCard.astro";
+import projects from "../../data/projects.json";
+---
+
+<section id="box" class="grid grid-rows-[100px_auto] w-full h-full mt-6  px-24">
+  <article class="h-fit row-start-1 col-start-1">
+    <h2 class="text-5xl font-bold font-bodyfont text-center">My Recent Work</h2>
+  </article>
+  <!-- timeline container -->
+  <div class="grid grid-cols-1 grid-rows-1">
+    <article 
+      class="col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
+    >
+      {
+        projects.map((project) => (
+          <ProjectCard 
+            project_id={`project_${project.project_id}`}
+            project_image={project.project_image}
+            project_name={project.project_name}
+            project_font={project.project_font}
+            project_description_short={project.project_description_short}
+            project_tech_stack={project.project_tech_stack}
+          />
+        ))
+      }
+      <!-- <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard /> -->
+    </article>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+let tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:'#box',
+    start:"top center",
+    end: '180px center',
+    scrub:true,
+    markers:false
+  }
+})
+
+let tl2 = gsap.timeline({
+  scrollTrigger:{
+    trigger:'#box',
+    start:"top center",
+    end: '250px center',
+    scrub:true,
+    markers:false
+  }
+})
+
+let tl3 = gsap.timeline({
+  scrollTrigger:{
+    trigger:'#box',
+    start:"top center",
+    end: '320px center',
+    scrub:true,
+    markers:false
+  }
+})
+
+tl.from('#project_1',{
+  y:800
+})
+tl2.from('#project_2',{
+  y:800
+})
+tl3.from('#project_3',{
+  y:800
+})
+
+
+
+
+
+
+
+  // Smooth scroll
+  const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+
+
+</script>

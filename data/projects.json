@@ -1,0 +1,26 @@
+[
+  {
+    "project_id": "1",
+    "project_name": "Twitter Clone",
+    "project_image": "assets/twitter.jpg",
+    "project_font": "system-ui",
+    "project_description_short": "Complete CRUD Twitter Clone",
+    "project_tech_stack": ["Python", "SQL", "Tailwindcss", "Javascript"]
+  },
+  {
+    "project_id": "2",
+    "project_name": "Disc Connection",
+    "project_image": "assets/discconnection_hero_vintage.jpg",
+    "project_font": "Roboto",
+    "project_description_short": "E-commerce website",
+    "project_tech_stack": ["NextJS", "SASS", "Stripe"]
+  },
+  {
+    "project_id": "3",
+    "project_name": "Portfolio",
+    "project_image": "assets/portfolio.png",
+    "project_font": "Lato",
+    "project_description_short": "Portfolio website, build on AstroJS",
+    "project_tech_stack": ["AstroJS", "React", "Tailwindcss"]
+  }
+]

@@ -1,0 +1,22 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import projects from "../../data/projects.json";
+---
+
+<section class="grid grid-rows-[100px_auto] h-full mt-6 w-full px-24">
+  <article class="h-fit row-start-1 col-start-1">
+    <h2 class="text-5xl font-bold font-bodyfont text-center">Projects</h2>
+  </article>
+  <!-- timeline container -->
+  <div class="grid grid-cols-1 grid-rows-1">
+    <article
+      class="col-start-1 row-start-1 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
+    >
+      {projects.map((project) => <ProjectCard image={project.project_image} />)}
+      <!-- <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard /> -->
+    </article>
+  </div>
+</section>

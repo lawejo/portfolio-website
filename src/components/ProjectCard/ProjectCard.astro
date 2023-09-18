@@ -1,0 +1,44 @@
+---
+const { project_name, project_image, project_id, project_gradient, project_font, project_description_short, project_tech_stack } = Astro.props;
+// import { ProjectCards } from "./ProjectCard";
+interface Props {
+  project_id: string;
+  project_image: string;
+  project_name: string;
+  project_gradient?: string;
+  project_font:string;
+  project_description_short:string;
+  project_tech_stack:string[];
+}
+function onHover(){
+  console.log(project_id);
+}
+console.log(project_tech_stack);
+---
+
+<div id={project_id}
+  class="card2 w-full h-72 grid"
+>
+<div id=`info_${project_id}` class="opacity-0 hover:opacity-100  duration-300 rounded-2xl w-full min-h-full bg-accent1 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle">
+<h4>{project_name}</h4>
+<p>
+{project_tech_stack.map((project)=>
+<span>| {project} </span>
+)}  
+</p>
+
+</div>
+<div class="relative overflow-hidden grid w-full h-full rounded-2xl col-start-1 row-start-1 transition ease-in-out">
+{project_image ? <div class="absolute top-0 left-0 w-full min-h-full bg-primary1/70"></div> 
+<img
+    
+    class="h-full w-full object-cover rounded-2xl col-start-1 row-start-1"
+    src={project_image}
+    alt=""
+  />  
+:  <div class="absolute top-0 left-0 w-full min-h-full bg-black bg-gradient-to-r from-project_gradient row-start-1 col-span-2  flex"></div>}
+  <!-- <p  style=`font-family:${project_font}` class="w-min leading-none col-start-1 row-start-1 self-center justify-self-center text-white z-10 text-[30px] flex-wrap">{project_name}</p> -->
+  </div>
+
+
+</div>
