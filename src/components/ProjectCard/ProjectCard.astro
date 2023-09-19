@@ -17,15 +17,42 @@ console.log(project_tech_stack);
 <div id={project_id}
   class="card2 w-full h-72 grid"
 >
-<div id=`info_${project_id}` class="opacity-0 hover:opacity-100  duration-300 rounded-2xl w-full min-h-full bg-secondary2 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle">
-<h4>{project_name}</h4>
-<p>
-{project_tech_stack.map((project)=>
-<span>| {project} </span>
-)}  
-</p>
 
+
+
+
+
+
+
+
+
+<div id=`info_${project_id}` class="opacity-0 hover:opacity-100  duration-300 rounded-2xl w-full min-h-full bg-primary1 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle text-primary2 py-10">
+<div class="row-start-1 col-start-1">
+<h4 class="text-center text-2xl">{project_name}</h4>
+
+<p class=" text-accent1">
+{project_tech_stack.map((stack, index)=>{
+  return project_tech_stack.length === (index+1) ? <span>{stack}</span>:<span>{stack}</span> <span class="mx-1">/</span>
+})}
+</p>
 </div>
+<button class="border border-accent1 h-fit w-fit self-end justify-self-center py-2 px-6 rounded-md">LEARN MORE</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="relative overflow-hidden grid w-full h-full rounded-2xl col-start-1 row-start-1 transition ease-in-out">
 {project_image ? <div class="absolute top-0 left-0 w-full min-h-full bg-primary1/70"></div> 
 <img
