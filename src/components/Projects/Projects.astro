@@ -27,18 +27,13 @@ import projects from "../../../data/projects.json";
   </div>
 </section>
 <script type="module" is:inline>
-  // import { gsap, } from "gsap";
-  // import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  // console.log(`hello1`);
 
-// gsap.registerPlugin(ScrollTrigger);
 let tl = gsap.timeline({
     scrollTrigger: {
         trigger: "#box",
         start: "top center",
         end: '140px center',
-        scrub: true,
-        markers: true
+        scrub: true
     }
 })
 
@@ -47,8 +42,7 @@ let tl2 = gsap.timeline({
         trigger: '#box',
         start: "top center",
         end: '210px center',
-        scrub: true,
-        markers: true
+        scrub: true
     }
 })
 
@@ -57,8 +51,7 @@ let tl3 = gsap.timeline({
         trigger: '#box',
         start: "top center",
         end: '230px center',
-        scrub: true,
-        markers: true
+        scrub: true
     }
 })
 
