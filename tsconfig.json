@@ -4,7 +4,8 @@
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true
   },
   "files": ["node_modules/gsap/types/index.d.ts"]
 }
