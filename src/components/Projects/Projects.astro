@@ -1,6 +1,6 @@
 ---
 import ProjectCard from "../ProjectCard/ProjectCard.astro";
-import projects from "../../../data/projects.json";
+import data from "../../../data/projects.json";
 ---
 
 <section id="box" class="box grid grid-rows-[100px_auto] w-full h-full mt-6  px-24">
@@ -12,14 +12,8 @@ import projects from "../../../data/projects.json";
       class="col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
     >
       {
-        projects.map((project) => (
-          <ProjectCard 
-            project_id={`project_${project.project_id}`}
-            project_image={project.project_image}
-            project_name={project.project_name}
-            project_font={project.project_font}
-            project_description_short={project.project_description_short}
-            project_tech_stack={project.project_tech_stack}
+        data.map((project) => (
+          <ProjectCard data={project}
           />
         ))
       }

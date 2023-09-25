@@ -1,26 +1,38 @@
 [
   {
-    "project_id": "1",
-    "project_name": "Twitter Clone",
-    "project_image": "assets/twitter.jpg",
-    "project_font": "system-ui",
-    "project_description_short": "Complete CRUD Twitter Clone",
-    "project_tech_stack": ["Python", "SQL", "Tailwindcss", "Javascript"]
+    "id": "1",
+    "name": "Twitter Clone",
+    "slug": "twitter-clone",
+    "image": "twitter.jpg",
+    "image_alt": "hand holding a phone with twitter written on it",
+    "image_w": 910,
+    "image_h": 500,
+    "font": "system-ui",
+    "description_short": "Complete CRUD Twitter Clone",
+    "tech_stack": ["Python", "SQL", "Tailwindcss", "Javascript"]
   },
   {
-    "project_id": "2",
-    "project_name": "Disc Connection",
-    "project_image": "assets/discconnection_hero_vintage.jpg",
-    "project_font": "Roboto",
-    "project_description_short": "E-commerce website",
-    "project_tech_stack": ["NextJS", "SASS", "Stripe"]
+    "id": "2",
+    "name": "Disc Connection",
+    "slug": "disc-connection",
+    "image": "discconnection_hero_vintage.jpg",
+    "image_alt": "an image of several discs in boxes",
+    "image_w": 750,
+    "image_h": 500,
+    "font": "Roboto",
+    "description_short": "E-commerce website",
+    "tech_stack": ["NextJS", "SASS", "Stripe"]
   },
   {
-    "project_id": "3",
-    "project_name": "Portfolio",
-    "project_image": "assets/portfolio.png",
-    "project_font": "Lato",
-    "project_description_short": "Portfolio website, build on AstroJS",
-    "project_tech_stack": ["AstroJS", "React", "Tailwindcss"]
+    "id": "3",
+    "name": "Portfolio",
+    "slug": "portfolio",
+    "image": "portfolio.png",
+    "image_alt": "screenshot from a portfolio website",
+    "image_w": 1919,
+    "image_h": 870,
+    "font": "Lato",
+    "description_short": "Portfolio website, build on AstroJS",
+    "tech_stack": ["AstroJS", "React", "Tailwindcss"]
   }
 ]
