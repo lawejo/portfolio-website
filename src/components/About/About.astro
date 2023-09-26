@@ -4,14 +4,14 @@ import lasse from '../../assets/Lasse-03.jpg'
 import type {About} from "./About"
 ---
 
-<article class=" w-full h-fit grid grid-cols-5  grid-rows-[min-content_min-content] col-span-2  gap-16 bg-gray-300 py-20">
-    <div class="row-start-1 col-start-3">
+<section id="about_trigger" class="w-full h-fit grid grid-cols-5  grid-rows-[min-content_min-content] col-span-2  gap-16 bg-gray-300 py-20">
+    <div id="about_headline" class="row-start-1 col-start-3">
         <h2 class="font-bold font-bodyfont text-5xl">About me</h2>
     </div>
-<div class="grid col-span-2 row-start-2   w-full h-96 justify-items-end">
+<div id="about_img" class="grid col-span-2 row-start-2   w-full h-96 justify-items-end">
 <img src="../../assets/Lasse-03.jpg" class="rounded-3xl h-full" alt="">
 </div>
-<div class="col-start-3 flex row-start-2 flex-col w-[55ch] leading-normal [&>p]:mb-2 [&>h2]:text-primary1 [&>h2]:font-bold">
+<div id="about_text" class="col-start-3 flex row-start-2 flex-col w-[55ch] leading-normal [&>p]:mb-2 [&>h2]:text-primary1 [&>h2]:font-bold">
     
     <p>Hello! I'm a web development student in my second semester at KEA, passionate about learning and growing as a developer.</p><p>
         
@@ -28,4 +28,49 @@ import type {About} from "./About"
 </ul> 
 </p>
 </div>
-</article>
+</section>
+
+<script>
+    let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#about_trigger",
+        start: "top center",
+        end: '140px center',
+        scrub: false,
+         toggleActions: 'play none reverse reset'
+       
+    }
+})
+
+let tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#about_trigger',
+        start: "top center",
+        end: '210px center',
+        scrub: false, toggleActions: 'play none reverse reset'
+       
+    }
+})
+
+let tl3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#about_trigger',
+        start: "top center",
+        end: '210px center',
+        scrub: false, toggleActions: 'play none reverse reset'
+       
+    }
+})
+tl.from('#about_headline', {
+    y: 800
+
+})
+tl2.from('#about_img', {
+    y: 800, delay: 0.06
+
+})
+tl3.from('#about_text', {
+    y: 800, delay: 0.12
+
+})
+</script>

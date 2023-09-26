@@ -1,58 +1,72 @@
 [
   {
     "name": "CSS",
-    "icon": "css.png"
+    "icon": "css.png",
+    "icon_alt": "css icon"
   },
   {
     "name": "HTML5",
-    "icon": "html5.png"
+    "icon": "html5.jpg",
+    "icon_alt": "html5 icon"
   },
   {
     "name": "Jira",
-    "icon": "jira.png"
+    "icon": "jira.png",
+    "icon_alt": "jira icon"
   },
   {
     "name": "JavaScript",
-    "icon": "js.jpg"
+    "icon": "js.jpg",
+    "icon_alt": "js icon"
   },
   {
     "name": "Mantine UI",
-    "icon": "mantine.png"
+    "icon": "mantine.png",
+    "icon_alt": "mantine icon"
   },
   {
     "name": "NextJS",
-    "icon": "nextjs.jpg"
+    "icon": "nextjs.jpg",
+    "icon_alt": "nextjs icon"
   },
   {
     "name": "NPM",
-    "icon": "npm.png"
+    "icon": "npm.png",
+    "icon_alt": "npm icon"
   },
   {
     "name": "Python",
-    "icon": "python.jpg"
+    "icon": "python.jpg",
+    "icon_alt": "python icon"
   },
   {
     "name": "SASS",
-    "icon": "sass.png"
+    "icon": "sass.png",
+    "icon_alt": "sass icon"
   },
   {
     "name": "SQL",
-    "icon": "sql.jpg"
+    "icon": "sql.jpg",
+    "icon_alt": "sql icon"
   },
   {
     "name": "SQLite",
-    "icon": "sqlite.jpg"
+    "icon": "sqlite.jpg",
+    "icon_alt": "sqlite icon"
   },
   {
     "name": "Storybook",
-    "icon": "storybook.jpg"
+    "icon": "storybook.jpg",
+    "icon_alt": "storybook icon"
   },
   {
     "name": "TailwindCSS",
-    "icon": "tailwindcss.jpg"
+    "icon": "tailwindcss.jpg",
+    "icon_alt": "tailwindcss icon"
   },
   {
     "name": "TypeScript",
-    "icon": "ts.png"
+    "icon": "ts.png",
+    "icon_alt": "ts icon"
   }
 ]

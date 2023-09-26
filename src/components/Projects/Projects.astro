@@ -31,7 +31,8 @@ let tl = gsap.timeline({
         trigger: "#box",
         start: "top center",
         end: '140px center',
-        scrub: true
+        scrub: false,
+       toggleActions: 'play none reverse reset'
     }
 })
 
@@ -40,7 +41,9 @@ let tl2 = gsap.timeline({
         trigger: '#box',
         start: "top center",
         end: '210px center',
-        scrub: true
+        scrub: false,
+              toggleActions: 'play none reverse reset'
+
     }
 })
 
@@ -49,7 +52,9 @@ let tl3 = gsap.timeline({
         trigger: '#box',
         start: "top center",
         end: '230px center',
-        scrub: true
+        scrub: false,
+               toggleActions: 'play none reverse reset'
+
     }
 })
 
@@ -58,11 +63,11 @@ tl.from('#project_1', {
 
 })
 tl2.from('#project_2', {
-    y: 800
+    y: 800, delay: 0.06
 
 })
 tl3.from('#project_3', {
-    y: 800
+    y: 800, delay: 0.12
 })
 
 </script>

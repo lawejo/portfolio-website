@@ -29,9 +29,16 @@ console.log(data.image);
 <h4 class="text-center text-2xl">{data.name}</h4>
 
 <p class=" text-accent1">
+
+
+
 {data.tech_stack.map((stack, index)=>{
   return data.tech_stack.length === (index+1) ? <span>{stack}</span>:<span>{stack}</span> <span class="mx-1">/</span>
 })}
+
+
+
+
 </p>
 </div>
 <a href=`/projects/${data.slug}` class="border border-accent1 h-fit w-fit self-end justify-self-center py-2 px-6 rounded-md hover:cursor-pointer">LEARN MORE</a>
