@@ -1,0 +1,58 @@
+[
+  {
+    "name": "CSS",
+    "icon": "css.png"
+  },
+  {
+    "name": "HTML5",
+    "icon": "html5.png"
+  },
+  {
+    "name": "Jira",
+    "icon": "jira.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "js.jpg"
+  },
+  {
+    "name": "Mantine UI",
+    "icon": "mantine.png"
+  },
+  {
+    "name": "NextJS",
+    "icon": "nextjs.jpg"
+  },
+  {
+    "name": "NPM",
+    "icon": "npm.png"
+  },
+  {
+    "name": "Python",
+    "icon": "python.jpg"
+  },
+  {
+    "name": "SASS",
+    "icon": "sass.png"
+  },
+  {
+    "name": "SQL",
+    "icon": "sql.jpg"
+  },
+  {
+    "name": "SQLite",
+    "icon": "sqlite.jpg"
+  },
+  {
+    "name": "Storybook",
+    "icon": "storybook.jpg"
+  },
+  {
+    "name": "TailwindCSS",
+    "icon": "tailwindcss.jpg"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "ts.png"
+  }
+]

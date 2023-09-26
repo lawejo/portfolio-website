@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 export default function Nav() {
   const [active, setactive] = useState(0);
-
+  // #TODO: Add active state
+  // #TODO: Add sticky feature
   return (
     <>
       <nav className="bg-primary1 grid w-full h-20 px-12">

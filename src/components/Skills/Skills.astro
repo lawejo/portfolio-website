@@ -1,5 +1,18 @@
 ---
+import data from "../../../data/skills.json";
 interface Props{
-    icon:string;
+    icon?:string;
 }
 ---
+
+<section class="pt-20 pb-24">
+    <h2 class="font-bold font-bodyfont text-5xl">Skills</h2>
+    <div>
+        <ul>
+      {data.map((skill)=>(
+        <li>
+        <img class="rounded-3xl h-full" src={`../../assets/${skill.icon}`}>    
+        </li>
+      ))}</ul>
+    </div>
+</section>

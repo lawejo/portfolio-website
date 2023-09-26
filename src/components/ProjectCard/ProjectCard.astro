@@ -1,7 +1,5 @@
 ---
 const {data} = Astro.props;
-// import { ProjectCards } from "./ProjectCard";
-import {Image} from 'astro:assets'
 export interface Data {
 
   data:{  
@@ -22,7 +20,7 @@ export interface Data {
 console.log(data.image);
 ---
 
-<div id={data.id}
+<div id={`project_${data.id}`}
   class="card2 w-full h-72 grid"
 >
 
