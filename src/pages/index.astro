@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav/Nav.jsx"
+// import Nav from "../components/Nav/NavAstro.astro"
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects.astro";
 import About from "../components/About/About.astro";
@@ -9,9 +10,9 @@ import Skills from "../components/Skills/Skills.astro"
     <!-- #TODO:Add a load screen -->
         <!-- #TODO: Add screentransition -->
 <Layout title="Welcome to Astro.">
-    <Nav />
+    <Nav client:load/>
     <Hero client:load/>
-    <Projects/>
+    <Projects />
     <About/>
     <Skills/>
 </Layout>

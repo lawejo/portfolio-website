@@ -1,6 +1,6 @@
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
-
+import React, { useState } from "react";
 export default function App() {
   // Create Ref element.
   const el = useRef(null);
@@ -21,7 +21,7 @@ export default function App() {
   }, []);
 
   return (
-    <section className="h-screen bg-primary1 border-t border-white/20">
+    <section className="h-screen bg-primary1 ">
       <div className="w-full h-full flex justify-center align-end">
         <div className="self-center mb-12 [&>*]:text-white [&>*]:mb-5">
           <p className="text-3xl font-normal">I'm</p>
