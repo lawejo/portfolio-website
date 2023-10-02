@@ -2,7 +2,7 @@
 import type {About} from "./About"
 ---
 
-<section id="about_trigger" class="w-full h-fit grid grid-cols-5  grid-rows-[min-content_min-content] col-span-2  gap-16 bg-gray-300 py-20">
+<section id="about" class="intersect about_trigger w-full h-fit grid grid-cols-5  grid-rows-[min-content_min-content] col-span-2  gap-16 bg-gray-300 py-20">
     <div id="about_headline" class="row-start-1 col-start-3">
         <h2 class="font-bold font-bodyfont text-5xl">About me</h2>
     </div>
@@ -31,7 +31,7 @@ import type {About} from "./About"
 <script is:inline>
     let tl = gsap.timeline({
     scrollTrigger: {
-        trigger: "#about_trigger",
+        trigger: ".about_trigger",
         start: "top center",
         end: '140px center',
         scrub: false,
@@ -42,7 +42,7 @@ import type {About} from "./About"
 
 let tl2 = gsap.timeline({
     scrollTrigger: {
-        trigger: '#about_trigger',
+        trigger: '.about_trigger',
         start: "top center",
         end: '210px center',
         scrub: false, toggleActions: 'play none reverse reset'
@@ -52,7 +52,7 @@ let tl2 = gsap.timeline({
 
 let tl3 = gsap.timeline({
     scrollTrigger: {
-        trigger: '#about_trigger',
+        trigger: '.about_trigger',
         start: "top center",
         end: '280px center',
         scrub: false, toggleActions: 'play none reverse reset'

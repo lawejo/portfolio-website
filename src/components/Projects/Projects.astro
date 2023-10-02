@@ -3,7 +3,7 @@ import ProjectCard from "../ProjectCard/ProjectCard.astro";
 import data from "../../../data/projects.json";
 ---
 
-<section id="box" class=" box grid grid-rows-[100px_min-content] w-full h-fit pt-24 pb-36  px-24">
+<section id="projects" class="intersect box grid grid-rows-[100px_min-content] w-full h-fit pt-24 pb-36  px-24">
   <article id="projects_headline" class="h-fit row-start-1 col-start-1">
     <h2 class="text-5xl font-bold font-bodyfont text-primary1 text-center">My Recent Work</h2>
   </article>
@@ -28,7 +28,7 @@ import data from "../../../data/projects.json";
 // #TODO: change animation for one that is not scrolltrigger
 let tl = gsap.timeline({
     scrollTrigger: {
-        trigger: "#box",
+        trigger: ".box",
         start: "top center",
         end: '70px center',
         scrub: false,
@@ -37,7 +37,7 @@ let tl = gsap.timeline({
 })
 let tl1 = gsap.timeline({
     scrollTrigger: {
-        trigger: "#box",
+        trigger: ".box",
         start: "top center",
         end: '140px center',
         scrub: false,
@@ -47,7 +47,7 @@ let tl1 = gsap.timeline({
 
 let tl2 = gsap.timeline({
     scrollTrigger: {
-        trigger: '#box',
+        trigger: '.box',
         start: "top center",
         end: '210px center',
         scrub: false,
@@ -58,7 +58,7 @@ let tl2 = gsap.timeline({
 
 let tl3 = gsap.timeline({
     scrollTrigger: {
-        trigger: '#box',
+        trigger: '.box',
         start: "top center",
         end: '230px center',
         scrub: false,

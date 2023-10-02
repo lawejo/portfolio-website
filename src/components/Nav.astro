@@ -1,15 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-// import Nav from "../components/Nav/Nav.jsx"
-// import Nav from "../components/Nav/NavAstro.astro"
-import Hero from "../components/Hero/Hero";
-import Projects from "../components/Projects/Projects.astro";
-import About from "../components/About/About.astro";
-import Skills from "../components/Skills/Skills.astro"
----
-    <!-- #TODO:Add a load screen -->
-        <!-- #TODO: Add screentransition -->
-<Layout title="Portfolio | Lasse Weber Jørgensen.">
+import { atom } from 'nanostores';
+export const isOpen = atom('');const {bookmark} = Astro.props
+console.log(isOpen)
+---   
+   
    <nav class="bg-primary1 w-full h-20  z-40  sticky top-0 ">
         <div class="bg-primary1 grid w-full px-12 h-full">
           <a
@@ -50,15 +44,10 @@ import Skills from "../components/Skills/Skills.astro"
         </div>
         </div>
       </nav>
-    <Hero client:load/>
-    <Projects />
-    <About/>
-    <Skills/>
-</Layout>
 
-<script>
-    
-    //   Scrollindicator
+      <script>import { isOpen } from "./Nav.astro";
+
+console.log(isOpen)
         window.addEventListener("scroll", () => {
           const scrollIndicator: HTMLElement | null = document.querySelector(".scrollIndicator");
           const progress: HTMLElement | null = document.querySelector(".progress");
@@ -73,31 +62,5 @@ import Skills from "../components/Skills/Skills.astro"
         progress.style.width = `${ScrollLeft}%`;
 }});
 
-const boxes = document.querySelectorAll('.intersect');
-function handleIntersection(entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-    const boxId = entry.target.id;
-    const {...matchingAnkers} = document.querySelectorAll(`#${boxId}`)
-    const currentAnker = matchingAnkers[0] as HTMLElement;
-    const [...allAs] = document.querySelectorAll('a')
-    console.log(currentAnker)
-    // currentAnker.classList.add('text-red-600')
-    allAs.map((a)=>{a.id === currentAnker.id? a.classList.add('text-accent1'):a.classList.remove('text-accent1')})
-
-    }
-  });
-}
-
-const observer = new IntersectionObserver(handleIntersection, {
-  root: null, // Use the viewport as the root
-  rootMargin: '0px',
-  threshold: 0.5, // Trigger when at least 50% of the element is visible
-});
-
-boxes.forEach((box) => {
-  observer.observe(box);
-}); 
-
-</script>
-</>
+      
+      </script>
