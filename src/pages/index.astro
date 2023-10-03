@@ -6,6 +6,7 @@ import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects.astro";
 import About from "../components/About/About.astro";
 import Skills from "../components/Skills/Skills.astro"
+import Footer from "../components/Footer.astro";
 ---
     <!-- #TODO:Add a load screen -->
         <!-- #TODO: Add screentransition -->
@@ -14,7 +15,7 @@ import Skills from "../components/Skills/Skills.astro"
         <div class="bg-primary1 grid w-full px-12 h-full">
           <a
             class="ml-4 flex items-center text-offwhite text-2xl font-normal max-w-fit font-bodyfont col-start-1 max-h-ful"
-            href="index.html"
+            href="#home_bookmark"
           >
             LWJ
           </a>
@@ -25,16 +26,16 @@ import Skills from "../components/Skills/Skills.astro"
             <div id="nav_links">
               <ul class="flex justify-between items-center [&>li]:pl-3 [&>*]:text-primary2">
                 <li>
-                  <a href="index" id="home">HOME</a>
+                  <a href="#home_bookmark" id="home_bookmark">HOME</a>
                 </li>
                 <li>
-                  <a href="projects" id="projects">PROJECTS</a>
+                  <a href="#projects_bookmark" id="projects_bookmark">PROJECTS</a>
                 </li>
                 <li>
-                  <a href="about" id="about">ABOUT</a>
+                  <a href="#about_bookmark" id="about_bookmark">ABOUT</a>
                 </li>
                 <li>
-                  <a href="contact" id="contact">CONTACT</a>
+                  <a href="contact" id="contact">SKILL & TECH</a>
                 </li>
                 <li>
                   <a href="resume" id="resume">RESUME</a>
@@ -54,6 +55,7 @@ import Skills from "../components/Skills/Skills.astro"
     <Projects />
     <About/>
     <Skills/>
+    <Footer/>
 </Layout>
 
 <script>
@@ -78,11 +80,10 @@ function handleIntersection(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
     const boxId = entry.target.id;
+    console.log(boxId)
     const {...matchingAnkers} = document.querySelectorAll(`#${boxId}`)
     const currentAnker = matchingAnkers[0] as HTMLElement;
     const [...allAs] = document.querySelectorAll('a')
-    console.log(currentAnker)
-    // currentAnker.classList.add('text-red-600')
     allAs.map((a)=>{a.id === currentAnker.id? a.classList.add('text-accent1'):a.classList.remove('text-accent1')})
 
     }

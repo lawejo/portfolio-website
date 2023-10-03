@@ -1,22 +1,22 @@
 [
   {
     "name": "CSS",
-    "icon": "css.png",
+    "icon": "css-3.svg",
     "icon_alt": "css icon"
   },
   {
     "name": "HTML5",
-    "icon": "html5.jpg",
+    "icon": "html-5.svg",
     "icon_alt": "html5 icon"
   },
   {
     "name": "Jira",
-    "icon": "jira.png",
+    "icon": "jira.svg",
     "icon_alt": "jira icon"
   },
   {
     "name": "JavaScript",
-    "icon": "js.jpg",
+    "icon": "javascript.svg",
     "icon_alt": "js icon"
   },
   {
@@ -26,47 +26,47 @@
   },
   {
     "name": "NextJS",
-    "icon": "nextjs.jpg",
+    "icon": "nextjs.svg",
     "icon_alt": "nextjs icon"
   },
   {
     "name": "NPM",
-    "icon": "npm.png",
+    "icon": "npm.svg",
     "icon_alt": "npm icon"
   },
   {
     "name": "Python",
-    "icon": "python.jpg",
+    "icon": "python.svg",
     "icon_alt": "python icon"
   },
   {
     "name": "SASS",
-    "icon": "sass.png",
+    "icon": "sass.svg",
     "icon_alt": "sass icon"
   },
   {
     "name": "SQL",
-    "icon": "sql.jpg",
+    "icon": "sql.svg",
     "icon_alt": "sql icon"
   },
   {
     "name": "SQLite",
-    "icon": "sqlite.jpg",
+    "icon": "sqlite.svg",
     "icon_alt": "sqlite icon"
   },
   {
     "name": "Storybook",
-    "icon": "storybook.jpg",
+    "icon": "storybook.svg",
     "icon_alt": "storybook icon"
   },
   {
     "name": "TailwindCSS",
-    "icon": "tailwindcss.jpg",
+    "icon": "tailwind.svg",
     "icon_alt": "tailwindcss icon"
   },
   {
     "name": "TypeScript",
-    "icon": "ts.png",
+    "icon": "typescript.svg",
     "icon_alt": "ts icon"
   }
 ]
