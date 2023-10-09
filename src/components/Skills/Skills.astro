@@ -1,30 +1,31 @@
 ---
 import data from "../../../data/skills.json";
-interface Props{
-    icon?:string;
+interface Props {
+  icon?: string;
 }
 ---
 
-<section class="pt-20 pb-24 grid grid-cols-5 grid-rows-[min-content_min-content]">
-    <h2 class="font-bold font-bodyfont text-5xl row-start-1 col-span-full justify-self-center">Skills & Tech</h2>
-    <div class="row-start-2 col-start-2 col-span-2 w-full">
-        <ul class="flex flex-wrap">
-
-
-      {data.map((skill)=>(
-
-        <li class="w-16 grid px-4 gap-x-4">
-          <div class="col-start-1 row-start-1 w-full h-fullbg-primary1">
-            </div>
-        <img class="col-start-1 row-start-1 h-full" src={`../../assets/skills/${skill.icon}`} alt={skill.icon_alt}>    
-        </li>
-
-      ))}
-      
-      </ul>
-
-
-
-
-    </div>
+<section
+  class="pt-20 pb-24 grid grid-cols-1 grid-rows-[min-content_min-content]"
+>
+  <h2
+    class="font-bold font-bodyfont text-5xl row-start-1 col-span-full justify-self-center"
+  >
+    Skills & Tech
+  </h2>
+  <div class="row-start-2 w-full px-96">
+    <ul class="flex flex-wrap">
+      {
+        data.map((skill) => (
+          <li class="w-16 px-4 gap-x-4">
+            <img
+              class=" h-full"
+              src={`../../assets/skills/${skill.icon}`}
+              alt={skill.icon_alt}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>

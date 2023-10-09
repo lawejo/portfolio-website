@@ -19,11 +19,7 @@
     "icon": "javascript.svg",
     "icon_alt": "js icon"
   },
-  {
-    "name": "Mantine UI",
-    "icon": "mantine.png",
-    "icon_alt": "mantine icon"
-  },
+
   {
     "name": "NextJS",
     "icon": "nextjs.svg",
