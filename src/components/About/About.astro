@@ -48,30 +48,30 @@ import type { About } from "./About";
 </section>
 
 <script is:inline>
-  tl = gsap.timeline({
+let tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".about_trigger",
-      start: "top center",
-      end: "140px center",
-      scrub: false,
-      toggleActio         none reverse reset",
+        trigger: ".about_trigger",
+        start: "top center",
+        end: "140px center",
+        scrub: false,
+        toggleActions: "play none reverse reset",
     },
-  });
+});
 
-  let sap.timeline({
+let tl2 = gsap.timeline({
     scrollTrigger: {
-      trigger: ".about_trigger",
-      start: "top center",
-      end: "210px center",
-      scrub: false,
-      toggleActions: "play none reverse reset",
+        trigger: ".about_trigger",
+        start: "top center",
+        end: "210px center",
+        scrub: false,
+        toggleActions: "play none reverse reset",
     },
-  });
+});
 
-  let tl3 = gsap.ti{
+let tl3 = gsap.timeline({
     scrollTrigger: {
-      trigger: ".about_trigger",
-      start: "top center",
+        trigger: ".about_trigger",
+        start: "top center",
       end: "280px center",
       scrub: false,
       toggleActions: "play none reverse reset",
