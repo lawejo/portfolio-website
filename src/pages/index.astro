@@ -85,10 +85,8 @@ function handleIntersection(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const boxId = entry.target.id;
-      console.log(boxId);
       const { ...matchingAnkers } = document.querySelectorAll(`#${boxId}`);
       const currentAnker = matchingAnkers[0];
-      console.log(currentAnker);
       const [...allAs] = document.querySelectorAll("a");
       allAs.map((a) => {
         const ahref = a.href.substring(a.href.lastIndexOf("/") + 2);
