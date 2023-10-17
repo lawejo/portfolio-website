@@ -43,45 +43,45 @@
   </div>
 </section>
 
-<script is:inline>
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about_trigger",
-    start: "top center",
-    end: "140px center",
-    scrub: false,
-    toggleActions: "play none reverse reset",
-  },
-});
+<script>
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about_trigger",
+      start: "top center",
+      end: "140px center",
+      scrub: false,
+      toggleActions: "play none reverse reset",
+    },
+  });
 
-let tl2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about_trigger",
-    start: "top center",
-    end: "210px center",
-    scrub: false,
-    toggleActions: "play none reverse reset",
-  },
-});
+  let tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about_trigger",
+      start: "top center",
+      end: "210px center",
+      scrub: false,
+      toggleActions: "play none reverse reset",
+    },
+  });
 
-let tl3 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".about_trigger",
-    start: "top center",
-    end: "280px center",
-    scrub: false,
-    toggleActions: "play none reverse reset",
-  },
-});
-tl.from("#about_headline", {
-  y: 800,
-});
-tl2.from("#about_img", {
-  y: 800,
-  delay: 0.06,
-});
-tl3.from("#about_text", {
-  y: 800,
-  delay: 0.12,
-});
+  let tl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about_trigger",
+      start: "top center",
+      end: "280px center",
+      scrub: false,
+      toggleActions: "play none reverse reset",
+    },
+  });
+  tl.from("#about_headline", {
+    y: 800,
+  });
+  tl2.from("#about_img", {
+    y: 800,
+    delay: 0.06,
+  });
+  tl3.from("#about_text", {
+    y: 800,
+    delay: 0.12,
+  });
 </script>
