@@ -3,83 +3,76 @@ import ProjectCard from "../ProjectCard/ProjectCard.astro";
 import data from "../../../data/projects.json";
 ---
 
-<section id="projects_bookmark" class="intersect box grid grid-rows-[100px_min-content] w-full h-fit pt-24 pb-36  px-24">
+<section
+  id="projects"
+  class="intersect box grid grid-rows-[100px_min-content] w-full h-fit pt-24 pb-36 px-24"
+>
   <article id="projects_headline" class="h-fit row-start-1 col-start-1">
-    <h2 class="text-5xl font-bold font-bodyfont text-primary1 text-center">My Recent Work</h2>
+    <h2 class="text-5xl font-bold font-bodyfont text-primary1 text-center">
+      My Recent Work
+    </h2>
   </article>
   <div class="grid grid-cols-1 grid-rows-1 row-start-2">
-    <article 
+    <article
       class="col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
     >
-      {
-        data.map((project) => (
-          <ProjectCard data={project}
-          />
-        ))
-      }
+      {data.map((project) => <ProjectCard data={project} />)}
     </article>
   </div>
 </section>
 
-
-
-
 <script is:inline>
 // #TODO: change animation for one that is not scrolltrigger
 let tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".box",
-        start: "top center",
-        end: '70px center',
-        scrub: false,
-       toggleActions: 'play none reverse reset'
-    }
-})
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
+    end: "70px center",
+    scrub: false,
+    toggleActions: "play none reverse reset",
+  },
+});
 let tl1 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".box",
-        start: "top center",
-        end: '140px center',
-        scrub: false,
-       toggleActions: 'play none reverse reset'
-    }
-})
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
+    end: "140px center",
+    scrub: false,
+    toggleActions: "play none reverse reset",
+  },
+});
 
 let tl2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.box',
-        start: "top center",
-        end: '210px center',
-        scrub: false,
-              toggleActions: 'play none reverse reset'
-
-    }
-})
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
+    end: "210px center",
+    scrub: false,
+    toggleActions: "play none reverse reset",
+  },
+});
 
 let tl3 = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.box',
-        start: "top center",
-        end: '230px center',
-        scrub: false,
-               toggleActions: 'play none reverse reset'
-
-    }
-})
-tl.from('#projects_headline', {
-    y: 800
-
-})
-tl1.from('#project_1', {
-    y: 800
-
-})
-tl2.from('#project_2', {
-    y: 800, delay: 0.06
-
-})
-tl3.from('#project_3', {
-    y: 800, delay: 0.12
-})
-
+  scrollTrigger: {
+    trigger: ".box",
+    start: "top center",
+    end: "230px center",
+    scrub: false,
+    toggleActions: "play none reverse reset",
+  },
+});
+tl.from("#projects_headline", {
+  y: 800,
+});
+tl1.from("#project_1", {
+  y: 800,
+});
+tl2.from("#project_2", {
+  y: 800,
+  delay: 0.06,
+});
+tl3.from("#project_3", {
+  y: 800,
+  delay: 0.12,
+});
 </script>
