@@ -98,8 +98,8 @@
 
 <script is:inline>
 import * as copy from "copy-to-clipboard";
-const email: HTMLElement | null = document.querySelector("#email");
-const phone: HTMLElement | null = document.querySelector("#phone");
+const email = document.querySelector("#email");
+const phone = document.querySelector("#phone");
 if (email !== null) {
   email.addEventListener("click", () => {
     copy(`${email.firstElementChild?.textContent}`);
