@@ -99,49 +99,16 @@
 <script is:inline>
 const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
-if (email !== null) {
-  email.addEventListener("click", () => {
-    copy(`${email.firstElementChild?.textContent}`);
-    const lastElementChild = email.lastElementChild;
-    if (lastElementChild !== null) {
-      lastElementChild.innerHTML = `Copied <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="24" height="24" fill="none"/>
-<path d="M5 13.3636L8.03559 16.3204C8.42388 16.6986 9.04279 16.6986 9.43108 16.3204L19 7" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
-    }
-  });
-  email.addEventListener("mouseenter", () => {
-    email.lastElementChild?.classList.remove("hidden");
-  });
-  email.addEventListener("mouseleave", () => {
-    email.lastElementChild?.classList.add("hidden");
-  });
-}
-if (phone !== null) {
-  phone.addEventListener("click", () => {
-    copy(`${phone.firstElementChild?.textContent}`);
-    const lastElementChild = phone.lastElementChild;
-    if (lastElementChild !== null) {
-      lastElementChild.innerHTML = `Copied <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="24" height="24" fill="none"/>
-<path d="M5 13.3636L8.03559 16.3204C8.42388 16.6986 9.04279 16.6986 9.43108 16.3204L19 7" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
-    }
-    if (
-      email?.lastElementChild?.innerHTML ===
-      `Copied <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="24" height="24" fill="none"/>
-<path d="M5 13.3636L8.03559 16.3204C8.42388 16.6986 9.04279 16.6986 9.43108 16.3204L19 7" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`
-    ) {
-      console.log("the other one is already copied");
-    }
-  });
-  phone.addEventListener("mouseenter", () => {
-    phone.lastElementChild?.classList.remove("hidden");
-  });
-  phone.addEventListener("mouseleave", () => {
-    phone.lastElementChild?.classList.add("hidden");
-  });
-}
+email.addEventListener("mouseenter", () => {
+  email.lastElementChild?.classList.remove("hidden");
+});
+email.addEventListener("mouseleave", () => {
+  email.lastElementChild?.classList.add("hidden");
+});
+phone.addEventListener("mouseenter", () => {
+  phone.lastElementChild?.classList.remove("hidden");
+});
+phone.addEventListener("mouseleave", () => {
+  phone.lastElementChild?.classList.add("hidden");
+});
 </script>
