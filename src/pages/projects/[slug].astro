@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import data from "../../../data/projects.json";
 import { fade, slide } from "astro:transitions";
 export async function getStaticPaths() {
-  //   const data = await fetch('../../../data/projects.json').then(response => response.json());
   return data.map((project) => {
     return {
       params: { slug: project.slug },
@@ -89,18 +88,19 @@ console.log(project);
     <div
       class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-2xl overflow-hidden grid grid-cols-2 grid-rows-2 gap-4 min-w-[300px]"
     >
-      <!--      {
-        project.images.map((image) => (
-          <>
-            <img
+      <p>
+        {
+          project.images.map((image) => {
+            return <img src="" alt="" />;
+          })
+        }
+      </p>
+      <!-- <img
               class="cursor-pointer w-full"
               src={`../../../assets/${image.path}`}
               alt=""
               id={image.id}
-            />
-          </>
-        ))
-      } -->
+            /> -->
     </div>
   </section>
 </Layout>
