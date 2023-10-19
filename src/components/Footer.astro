@@ -97,7 +97,6 @@
 </footer>
 
 <script is:inline>
-import * as copy from "copy-to-clipboard";
 const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
 if (email !== null) {
@@ -113,11 +112,9 @@ if (email !== null) {
   });
   email.addEventListener("mouseenter", () => {
     email.lastElementChild?.classList.remove("hidden");
-    // console.log(email.lastElementChild)
   });
   email.addEventListener("mouseleave", () => {
     email.lastElementChild?.classList.add("hidden");
-    // console.log(email.lastElementChild)
   });
 }
 if (phone !== null) {
