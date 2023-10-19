@@ -1,66 +1,69 @@
 ---
-const {data} = Astro.props;
+const { data } = Astro.props;
 export interface Data {
-
-  data:{  
-  id: string;
-  name: string;
-  slug: string;
-  image: string;
-  image_alt: string;
-  image_w: number;
-  image_h: number;
-  project_gradient?: string;
-  font:string;
-  description_short:string;
-  tech_stack:string[];};
-  
+  data: {
+    id: string;
+    name: string;
+    slug: string;
+    cover: string;
+    cover_alt: string;
+    cover_w: number;
+    cover_h: number;
+    project_gradient?: string;
+    font: string;
+    description_short: string;
+    tech_stack: string[];
+  };
 }
-
-console.log(data.image);
 ---
 
-<div id={`project_${data.id}`}
-  class="card2 w-full h-72 grid"
->
+<div id={`project_${data.id}`} class="card2 w-full h-72 grid">
+  <div
+    id=`info_${data.id}`
+    class="opacity-0 hover:opacity-100 duration-300 rounded-2xl w-full min-h-full bg-primary1 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle text-primary2 py-10"
+  >
+    <div class="row-start-1 col-start-1">
+      <h4 class="text-center text-2xl">{data.name}</h4>
 
-<div id=`info_${data.id}` class="opacity-0 hover:opacity-100  duration-300 rounded-2xl w-full min-h-full bg-primary1 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle text-primary2 py-10">
-<div class="row-start-1 col-start-1">
-<h4 class="text-center text-2xl">{data.name}</h4>
-
-<p class=" text-accent1">
-
-
-
-{data.tech_stack.map((stack, index)=>{
-  return data.tech_stack.length === (index+1) ? <span>{stack}</span>:<span>{stack}</span> <span class="mx-1">/</span>
-})}
-
-
-
-
-</p>
-</div>
-<a href=`/projects/${data.slug}` class="border border-accent1 h-fit w-fit self-end justify-self-center py-2 px-6 rounded-md hover:cursor-pointer">LEARN MORE</a>
-</div>
-
-
-<div class="relative overflow-hidden grid w-full h-full rounded-2xl col-start-1 row-start-1 transition ease-in-out">
-{data.image ? <div class="absolute top-0 left-0 w-full min-h-full bg-primary1/70"></div> 
-
-<img
-    
-    class="h-full w-full object-cover rounded-2xl col-start-1 row-start-1"
-    src={`assets/${data.image}`}
-    alt={data.image_alt}
-  /> 
-
-
-
-
-:  <div class="absolute top-0 left-0 w-full min-h-full bg-black bg-gradient-to-r from-project_gradient row-start-1 col-span-2  flex"></div>}
-  <!-- <p  style=`font-family:${font}` class="w-min leading-none col-start-1 row-start-1 self-center justify-self-center text-white z-10 text-[30px] flex-wrap">{project_name}</p> -->
+      <p class="text-accent1">
+        {
+          data.tech_stack.map((stack, index) => {
+            return data.tech_stack.length === index + 1 ? (
+              <span>{stack}</span>
+            ) : (
+              <>
+                <span>{stack}</span>
+                <span class="mx-1">/</span>
+              </>
+            );
+          })
+        }
+      </p>
+    </div>
+    <a
+      href=`/projects/${data.slug}`
+      class="border border-accent1 h-fit w-fit self-end justify-self-center py-2 px-6 rounded-md hover:cursor-pointer"
+      >LEARN MORE</a
+    >
   </div>
 
-
+  <div
+    class="relative overflow-hidden grid w-full h-full rounded-2xl col-start-1 row-start-1 transition ease-in-out"
+  >
+    {
+      data.cover ? (
+        <>
+          <div class="absolute top-0 left-0 w-full min-h-full bg-primary1/70" />
+          <img
+            class="h-full w-full object-cover rounded-2xl col-start-1 row-start-1"
+            src={`assets/${data.cover}`}
+            alt={data.cover_alt}
+          />
+        </>
+      ) : (
+        <div class="absolute top-0 left-0 w-full min-h-full bg-black bg-gradient-to-r from-project_gradient row-start-1 col-span-2  flex" />
+      )
+    }
+    <!-- <p  style=`font-family:${font}` class="w-min leading-none col-start-1 row-start-1 self-center justify-self-center text-white z-10 text-[30px] flex-wrap">{project_name}</p> -->
+  </div>
 </div>

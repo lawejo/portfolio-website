@@ -7,6 +7,7 @@ import Projects from "../components/Projects/Projects.astro";
 import About from "../components/About/About.astro";
 import Skills from "../components/Skills/Skills.astro";
 import Footer from "../components/Footer.astro";
+import projects from "../../data/projects.json";
 ---
 
 <!-- #TODO:Add a load screen --><!-- #TODO: Add screentransition -->
@@ -31,8 +32,27 @@ import Footer from "../components/Footer.astro";
             <li>
               <a href="#home">HOME</a>
             </li>
-            <li>
+            <li id="projects_menu">
               <a href="#projects">PROJECTS</a>
+              <div class="absolute w-fit hidden">
+                <ul
+                  class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full"
+                >
+                  {
+                    projects.map((project, index) => {
+                      return projects.length === index + 1 ? (
+                        <a href=`/projects/${project.slug}` class="border hover:bg-gray-300 transition ease-in-out duration-200">
+                          {project.name}
+                        </a>
+                      ) : (
+                        <a href=`/projects/${project.slug}` class="border-t border-x hover:bg-gray-300 transition ease-in-out duration-200">
+                          {project.name}
+                        </a>
+                      );
+                    })
+                  }
+                </ul>
+              </div>
             </li>
             <li>
               <a href="#about">ABOUT</a>
@@ -107,4 +127,21 @@ const observer = new IntersectionObserver(handleIntersection, {
 boxes.forEach((box) => {
   observer.observe(box);
 });
+// ---------------  Dropdown menu ---------------
+
+const projectMenu = document.querySelector("#projects_menu");
+
+projectMenu.addEventListener("mouseover", () => {
+  console.log(`Working`);
+  projectMenu.lastElementChild.classList.remove("hidden");
+});
+
+projectMenu.lastElementChild.addEventListener("mouseout", (e) => {
+  projectMenu.lastElementChild.classList.add("hidden");
+});
+document
+  .querySelector("#nav_links")
+  .lastElementChild.addEventListener("mouseout", (e) => {
+    projectMenu.lastElementChild.classList.add("hidden");
+  });
 </script>

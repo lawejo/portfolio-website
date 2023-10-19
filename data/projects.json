@@ -3,36 +3,45 @@
     "id": "1",
     "name": "Twitter Clone",
     "slug": "twitter-clone",
-    "image": "twitter.jpg",
-    "image_alt": "hand holding a phone with twitter written on it",
-    "image_w": 910,
-    "image_h": 500,
+    "cover": "twitter.jpg",
+    "cover_alt": "hand holding a phone with twitter written on it",
     "font": "system-ui",
     "description_short": "Complete CRUD Twitter Clone",
-    "tech_stack": ["Python", "SQL", "Tailwindcss", "Javascript"]
+    "description_long": "For my 5th-semester Web Development exam project, I focused on using relational databases and Python with Bottle, a lightweight web framework. This project introduced me to Python, Bottle, and SQL databases. It involved fulfilling various requirements and features, making it an important part of my academic journey.",
+    "tech_stack": ["Python", "SQL", "Tailwindcss", "Javascript"],
+    "url": "https://discconnection.vercel.app/",
+     "images":[
+      {"path":"twitterclone_1.png","alt":"this is the alt","id":"1"},
+      {"path":"twitterclone_2.png","alt":"this is the alt","id":"2"},
+      {"path":"twitterclone_3.png","alt":"this is the alt","id":"3"},
+      {"path":"twitterclone_4.png","alt":"this is the alt","id":"4"}]
   },
   {
     "id": "2",
     "name": "Disc Connection",
     "slug": "disc-connection",
-    "image": "discconnection_hero_vintage.jpg",
-    "image_alt": "an image of several discs in boxes",
-    "image_w": 750,
-    "image_h": 500,
+    "cover": "discconnection_hero_vintage.jpg",
+    "cover_alt": "an image of several discs in boxes",
     "font": "Roboto",
     "description_short": "E-commerce website",
-    "tech_stack": ["NextJS", "SASS", "Stripe"]
+    "description_long": "For my 4th-semester project, I led the creation of a modern e-commerce site for Disc Connection. Our main goal was to improve their online presence and make the website more user-friendly. We used technologies like Next.js, SASS, GitHub, and Redux to enhance the site, showing our dedication to user-focused web development.",
+    "tech_stack": ["NextJS", "SASS", "Stripe"],
+    "images":[
+      {"path":"discconnection_1.png","alt":"this is the alt","id":"1"},
+      {"path":"discconnection_2.png","alt":"this is the alt","id":"2"},
+      {"path":"discconnection_3.png","alt":"this is the alt","id":"3"},
+      {"path":"discconnection_4.png","alt":"this is the alt","id":"4"}]
   },
   {
     "id": "3",
     "name": "Portfolio",
     "slug": "portfolio",
-    "image": "portfolio.png",
-    "image_alt": "screenshot from a portfolio website",
-    "image_w": 1919,
-    "image_h": 870,
+    "cover": "portfolio.png",
+    "cover_alt": "screenshot from a portfolio website",
     "font": "Lato",
     "description_short": "Portfolio website, build on AstroJS",
-    "tech_stack": ["AstroJS", "React", "Tailwindcss"]
+    "description_long": "This portfolio site was made to help me in the pursuit of an internship. It has been build by using Astrojs, Tailwindcss and via astro I've also included a React component.",
+    "tech_stack": ["AstroJS", "React", "Tailwindcss"],
+    "url": "https://portfolio-website-delta-teal.vercel.app/"
   }
 ]
