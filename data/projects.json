@@ -42,6 +42,7 @@
     "description_short": "Portfolio website, build on AstroJS",
     "description_long": "This portfolio site was made to help me in the pursuit of an internship. It has been build by using Astrojs, Tailwindcss and via astro I've also included a React component.",
     "tech_stack": ["AstroJS", "React", "Tailwindcss"],
-    "url": "https://portfolio-website-delta-teal.vercel.app/"
+    "url": "https://portfolio-website-delta-teal.vercel.app/",
+    "images":[]
   }
 ]
