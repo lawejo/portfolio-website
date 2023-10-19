@@ -12,7 +12,10 @@ export async function getStaticPaths() {
   });
 }
 const { project } = Astro.props;
-console.log(project);
+console.log(`----------------------------------`);
+console.log(project.slug.substring(0,project.slug.lastIndexOf("-")));
+console.log(project.name.substring());
+console.log(`----------------------------------`);
 ---
 
 <Layout title={project.title}>
@@ -50,8 +53,27 @@ console.log(project);
             <li>
               <a href="/#home">HOME</a>
             </li>
-            <li>
-              <a href="/#projects">PROJECTS</a>
+           <li id="projects_menu" class="">
+              <a href="#projects">PROJECTS</a>
+              <div class="absolute w-fit hidden transition ease-in-out duration-1000">
+                <ul
+                  class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full "
+                >
+                  {
+                    data.map((dataproject, index) => {
+                      return data.length === index + 1 ? (
+                        <a href=`/projects/${dataproject.slug}` class={project.name === dataproject.name ? `border bg-gray-300 transition ease-in-out duration-300`:`border hover:bg-gray-300 transition ease-in-out duration-300`}>
+                          {dataproject.name}
+                        </a>
+                      ) : (
+                        <a href=`/projects/${dataproject.slug}` class={project.name === dataproject.name ? `border-t border-x bg-gray-300 transition ease-in-out duration-300`:`border-t border-x hover:bg-gray-300 transition ease-in-out duration-300`}>
+                          {dataproject.name}
+                        </a>
+                      );
+                    })
+                  }
+                </ul>
+              </div>
             </li>
             <li>
               <a href="/#about">ABOUT</a>
@@ -124,4 +146,21 @@ allImg.forEach((img) => {
     );
   });
 });
+
+// ---------------  Dropdown menu ---------------
+
+const projectMenu = document.querySelector("#projects_menu");
+
+projectMenu.addEventListener("mouseover", () => {
+  projectMenu.lastElementChild.classList.remove("hidden");
+});
+
+projectMenu.lastElementChild.addEventListener("mouseout", (e) => {
+  projectMenu.lastElementChild.classList.add("hidden");
+});
+document
+  .querySelector("#nav_links")
+  .lastElementChild.addEventListener("mouseout", (e) => {
+    projectMenu.lastElementChild.classList.add("hidden");
+  });
 </script>
