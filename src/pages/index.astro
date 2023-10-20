@@ -1,13 +1,11 @@
 ---
+import data from "../../data/projects.json";
 import Layout from "../layouts/Layout.astro";
-// import Nav from "../components/Nav/Nav.jsx"
-// import Nav from "../components/Nav/NavAstro.astro"
 import Hero from "../components/Hero/Hero";
 import Projects from "../components/Projects/Projects.astro";
 import About from "../components/About/About.astro";
 import Skills from "../components/Skills/Skills.astro";
 import Footer from "../components/Footer.astro";
-import projects from "../../data/projects.json";
 ---
 
 <!-- #TODO:Add a load screen --><!-- #TODO: Add screentransition -->
@@ -21,26 +19,27 @@ import projects from "../../data/projects.json";
       >
         LWJ
       </a>
+
       <div
         id="end_of_nav"
-        class="flex flex-row-reverse items-center col-start-2"
+        class="hidden md:flex flex-row-reverse items-center col-start-2"
       >
-        <div id="nav_links">
+        <div class="nav_links">
           <ul
             class="flex justify-between items-center [&>li]:pl-3 [&>*]:text-primary2"
           >
             <li>
-              <a href="#home">HOME</a>
+              <a class=" nav_link transition ease-in-out duration-200" href="#home">HOME</a>
             </li>
-            <li id="projects_menu" class="">
-              <a href="#projects">PROJECTS</a>
-              <div class="absolute w-fit hidden transition ease-in-out duration-1000">
+            <li class="projects_menu">
+              <a href="#projects" class="nav_link transition ease-in-out duration-200">PROJECTS</a>
+              <div class="absolute w-fit hidden">
                 <ul
                   class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full  "
                 >
                   {
-                    projects.map((project, index) => {
-                      return projects.length === index + 1 ? (
+                    data.map((project, index) => {
+                      return data.length === index + 1 ? (
                         <a href=`/projects/${project.slug}` class="border hover:bg-gray-300 transition ease-in-out duration-300">
                           {project.name}
                         </a>
@@ -55,18 +54,71 @@ import projects from "../../data/projects.json";
               </div>
             </li>
             <li>
-              <a href="#about">ABOUT</a>
+              <a class=" nav_link transition ease-in-out duration-200" href="#about">ABOUT</a>
             </li>
             <li>
-              <a href="contact">SKILL & TECH</a>
+              <a class=" nav_link transition ease-in-out duration-200" href="contact">SKILL & TECH</a>
             </li>
             <li>
-              <a href="#">CV</a>
+              <a class=" nav_link transition ease-in-out duration-200" href="#">CV</a>
             </li>
           </ul>
         </div>
+      
+      
+      </div>
+      <div class="flex md:hidden col-start-2 items-center place-content-end cursor-pointer burgerMenu"> 
+        <svg viewBox="0 0 100 80" width="40" height="40" class="text-white">
+          <rect fill="white" class="one" width="100" height="3"></rect>
+          <rect fill="white" class="two"y="30" width="100" height="3"></rect>
+          <rect fill="white" class="three" y="60" width="100" height="3"></rect>
+        </svg>
       </div>
     </div>
+        <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 transition-transform translate-x-full slideMenu md:hidden">
+          <span
+      class="closeSlide absolute top-0 right-4 text-gray-100 text-4xl  hover:text-gray-400 cursor-pointer transition-all duration-300"
+      >&times;</span>
+      <div class="nav_links">
+          <ul class="flex flex-col justify-between items-center [&>li]:pl-3 [&>*]:text-primary2 [&>li]:min-w-full [&>li]:p-4 mt-14 [&>li]:flex [&>li]:items-center [&>li]:justify-center">
+            <li>
+              <a href="#home" class="nav_link transition ease-in-out duration-200">HOME</a>
+            </li>
+            <li  class="projects_menu relative">
+              <a href="#projects" class="nav_link transition ease-in-out duration-200">PROJECTS</a>
+               <div class="absolute -left-28 w-fit hidden top-4 z-50">
+                <ul
+                  class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full  "
+                >
+                  {
+                    data.map((project, index) => {
+                      return data.length === index + 1 ? (
+                        <a href=`/projects/${project.slug}` class="border hover:bg-gray-300 transition ease-in-out duration-300">
+                          {project.name}
+                        </a>
+                      ) : (
+                        <a href=`/projects/${project.slug}` class="border-t border-x hover:bg-gray-300 transition ease-in-out duration-300">
+                          {project.name}
+                        </a>
+                      );
+                    })
+                  }
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#about" class="nav_link transition ease-in-out duration-200">ABOUT</a>
+            </li>
+            <li>
+              <a href="contact" class="nav_link transition ease-in-out duration-200">SKILL & TECH</a>
+            </li>
+            <li> 
+              <a href="#" class="nav_link transition ease-in-out duration-200">CV</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+
     <div
       class="scrollIndicator h-0.5 self-end -ml-12 bg-white/20 col-span-2 hidden"
     >
@@ -99,18 +151,19 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ---------------  Automatic bookmarking ---------------
+// ---------------  Automatic navmarking ---------------
+let currentSection = '';
 const boxes = document.querySelectorAll(".intersect");
 function handleIntersection(entries, observer) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const boxId = entry.target.id;
       const { ...matchingAnkers } = document.querySelectorAll(`#${boxId}`);
-      const currentAnker = matchingAnkers[0];
+      currentSection = matchingAnkers[0];
       const [...allAs] = document.querySelectorAll("a");
       allAs.map((a) => {
         const ahref = a.href.substring(a.href.lastIndexOf("/") + 2);
-        ahref === currentAnker.id
+        ahref === currentSection.id
           ? a.classList.add("text-accent1")
           : a.classList.remove("text-accent1");
       });
@@ -129,18 +182,48 @@ boxes.forEach((box) => {
 });
 // ---------------  Dropdown menu ---------------
 
-const projectMenu = document.querySelector("#projects_menu");
+const projectMenus = Array.from(document.querySelectorAll(".projects_menu"))
 
-projectMenu.addEventListener("mouseover", () => {
-  projectMenu.lastElementChild.classList.remove("hidden");
-});
+projectMenus.map((menu) => {
+  menu.addEventListener("mouseover", () => {
+    menu.lastElementChild.classList.remove("hidden");
+  })
+})
+projectMenus.map((menu) => {
+  menu.addEventListener("mouseout", () => {
+    menu.lastElementChild.classList.add("hidden");
+  })
+})
 
-projectMenu.lastElementChild.addEventListener("mouseout", (e) => {
-  projectMenu.lastElementChild.classList.add("hidden");
-});
-document
-  .querySelector("#nav_links")
-  .lastElementChild.addEventListener("mouseout", (e) => {
-    projectMenu.lastElementChild.classList.add("hidden");
+// ---------------  Burger menu ---------------
+const burgerMenu = document.querySelector(".burgerMenu")
+const slideMenu = document.querySelector(".slideMenu")
+const menuClose = document.querySelector(".closeSlide")
+
+
+burgerMenu.firstElementChild.addEventListener('click', () => {
+  slideMenu.style.transform = "translateX(0%)"
+})
+
+menuClose.addEventListener('click', () => {
+  slideMenu.style.transform = "translateX(100%)"
+})
+
+// --------------- Nav menu hover---------------
+const navLinks = Array.from(document.querySelectorAll(".nav_link"))
+
+
+for (const link of navLinks) {
+  link.addEventListener('mouseover', () => {
+    const selectedLink = link.href.substring(link.href.lastIndexOf("/") + 2)
+    const activeLink = currentSection.id
+    selectedLink === activeLink ? '' : link.classList.add('text-gray-500');
+
   });
+
+  link.addEventListener('mouseout', () => {
+    link.classList.remove('text-gray-500');
+  });
+}
+
 </script>

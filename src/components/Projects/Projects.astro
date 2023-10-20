@@ -1,6 +1,8 @@
 ---
 import ProjectCard from "../ProjectCard/ProjectCard.astro";
 import data from "../../../data/projects.json";
+
+console.log(data.length);
 ---
 
 <section
@@ -22,7 +24,6 @@ import data from "../../../data/projects.json";
 </section>
 
 <script is:inline>
-// #TODO: change animation for one that is not scrolltrigger
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".box",
@@ -52,15 +53,15 @@ let tl2 = gsap.timeline({
   },
 });
 
-let tl3 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".box",
-    start: "top center",
-    end: "230px center",
-    scrub: false,
-    toggleActions: "play none reverse reset",
-  },
-});
+// let tl3 = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".box",
+//     start: "top center",
+//     end: "230px center",
+//     scrub: false,
+//     toggleActions: "play none reverse reset",
+//   },
+// });
 tl.from("#projects_headline", {
   y: 800,
 });
@@ -71,8 +72,8 @@ tl2.from("#project_2", {
   y: 800,
   delay: 0.06,
 });
-tl3.from("#project_3", {
-  y: 800,
-  delay: 0.12,
-});
+// tl3.from("#project_3", {
+//   y: 800,
+//   delay: 0.12,
+// });
 </script>
