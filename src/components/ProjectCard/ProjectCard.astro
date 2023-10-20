@@ -29,10 +29,10 @@ export interface Data {
         {
           data.tech_stack.map((stack, index) => {
             return data.tech_stack.length === index + 1 ? (
-              <span>{stack}</span>
+              <span>{stack.name}</span>
             ) : (
               <>
-                <span>{stack}</span>
+                <span>{stack.name}</span>
                 <span class="mx-1">/</span>
               </>
             );

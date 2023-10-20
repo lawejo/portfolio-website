@@ -15,7 +15,9 @@ console.log(data.length);
   </article>
   <div class="grid grid-cols-1 grid-rows-1 row-start-2">
     <article
-      class="col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
+      class={data.length >= 3
+        ? "col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
+        : "col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-2 xl:mx-48 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"}
     >
       {data.map((project) => <ProjectCard data={project} />)}
     </article>
