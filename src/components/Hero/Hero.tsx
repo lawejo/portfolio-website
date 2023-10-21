@@ -25,7 +25,7 @@ export default function App() {
       <div className="w-full h-full flex justify-center align-end">
         <div className="w-fit self-center mb-12 [&>*]:text-white [&>*]:mb-5">
           <p className="w-fit text-3xl font-normal">I'm</p>
-          <h1 className="w-fit text-5xl whitespace-nowrap font-bold">
+          <h1 className="w-fit text-2xl md:text-5xl whitespace-nowrap font-bold">
             Lasse Weber Jørgensen
           </h1>
           <h2 className="text-4xl">
