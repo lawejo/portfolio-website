@@ -81,7 +81,7 @@ import Footer from "../components/Footer.astro"; -->
         </svg>
       </div>
     </div>
-        <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 transition-transform translate-x-full slideMenu md:hidden">
+        <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 transition-transform translate-x-full slideMenu hidden">
           <span
       class="closeSlide absolute top-0 right-4 text-gray-100 text-4xl  hover:text-gray-400 cursor-pointer transition-all duration-300"
       >&times;</span>
@@ -209,10 +209,12 @@ const menuClose = document.querySelector(".closeSlide")
 
 burgerMenu.firstElementChild.addEventListener('click', () => {
   slideMenu.style.transform = "translateX(0%)"
+  slideMenu.classList.remove("hidden")
 })
 
 menuClose.addEventListener('click', () => {
   slideMenu.style.transform = "translateX(100%)"
+  slideMenu.classList.add("hidden")
 })
 
 // --------------- Nav menu hover---------------
