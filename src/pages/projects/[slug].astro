@@ -157,14 +157,19 @@ console.log(project.tech_stack);
       {project.name}
     </h2>
     <div
-      class="flex flex-col row-start-2 col-start-1 col-span-12 lg:col-span-5 w-full mb-6 h-fit gap-6"
+      class="flex flex-col lg:flex-col row-start-2 col-start-1 col-span-12 lg:col-span-5 w-full mb-6 h-fit gap-6 md:flex-row"
     >
-      <p class="place-self-start">{project.description_long}</p>
-      <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-200 row-start 1">
-        <a class="mr-2 hover:bg-primary1 hover:text-white" href={project.url} target="_blank">Demo</a>
-        <a class="hover:bg-primary1 hover:text-white" href={project.github} target="_blank">Github repo</a>
-      </div>
-      <div class="w-fit h-fit mt-4">
+    
+    <div class="gap-6 flex flex-col">
+      
+        <p class="place-self-start">{project.description_long}</p>
+        <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-200 row-start 1">
+          <a class="mr-2 hover:bg-primary1 hover:text-white" href={project.url} target="_blank">Demo</a>
+          <a class="hover:bg-primary1 hover:text-white" href={project.github} target="_blank">Github repo</a>
+        </div>
+    </div>
+
+      <div class="w-full h-fit lg:mt-4 md:mt-0">
       <h3 class="text-4xl">Tech stack</h3>
       <article>
       <ul class="flex flex-wrap">
@@ -176,7 +181,7 @@ console.log(project.tech_stack);
               src={`../../assets/skills/${skill.icon}`}
               alt={skill.icon_alt}
             />
-            <div class="hidden rounded-lg p-2 bg-primary1 border border-accent1 text-white absolute -bottom-10 flex justify-center w-[100px] left-1/2 transform -translate-x-1/2 ease-in-out duration-200">
+            <div class="hidden rounded-lg p-2 bg-primary1 border border-accent1 text-white absolute -bottom-10 flex justify-center w-[100px] left-1/2 transform -translate-x-1/2 ease-in-out duration-200 z-50">
               {skill.name}
               </div>
           </li>
@@ -185,9 +190,11 @@ console.log(project.tech_stack);
     </ul>
       </article>
     </div>
+
+
     </div>
     <div
-      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-2xl overflow-hidden grid grid-cols-2 grid-rows-2 gap-4 min-w-[300px]"
+      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-2xl overflow-hidden grid grid-cols-2 grid-rows-4 gap-4 min-w-[300px]"
     >
       {
         project.images.map((image) => (
