@@ -28,10 +28,10 @@
     "url": "https://lawejo.eu.pythonanywhere.com/",
     "github": "https://github.com/lawejo/mysite",
      "images":[
-      {"path":"twitterclone_1.png","alt":"this is the alt","id":"1"},
-      {"path":"twitterclone_2.png","alt":"this is the alt","id":"2"},
-      {"path":"twitterclone_3.png","alt":"this is the alt","id":"3"},
-      {"path":"twitterclone_4.png","alt":"this is the alt","id":"4"}]
+      {"path":"twitterclone_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page from where you can login. This triggers a post request where the user credentials are verified. "},
+      {"path":"twitterclone_2.png","alt":"this is the alt","id":"2","caption":"This is the landing page after the user logs in. From here they can do different types of tweets, follow other users and several more actions."},
+      {"path":"twitterclone_3.png","alt":"this is the alt","id":"3","caption":"This is the users personal page from they can see their own tweets of all types. From here they can go to edit their info or follow other users"},
+      {"path":"twitterclone_4.png","alt":"this is the alt","id":"4","caption":"This is where the users can edit their information, including their profile picture and cover image."}]
   },
   {
     "id": "2",
@@ -54,9 +54,9 @@
     "url":"https://discconnection.vercel.app/",
     "github":"https://github.com/lawejo/DC-WEBSITE",
     "images":[
-      {"path":"discconnection_1.png","alt":"this is the alt","id":"1"},
-      {"path":"discconnection_2.png","alt":"this is the alt","id":"2"},
-      {"path":"discconnection_3.png","alt":"this is the alt","id":"3"},
-      {"path":"discconnection_4.png","alt":"this is the alt","id":"4"}]
+      {"path":"discconnection_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page website."},
+      {"path":"discconnection_2.png","alt":"this is the alt","id":"2","caption":"This is a screenshot after the user has put a few items in the basket and is about to check out. This flow is from stripe."},
+      {"path":"discconnection_3.png","alt":"this is the alt","id":"3","caption":"This is a screenshot of the users basket."},
+      {"path":"discconnection_4.png","alt":"this is the alt","id":"4","caption":"The product grid along with all information about the products."}]
   }
 ]
