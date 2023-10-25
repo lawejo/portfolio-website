@@ -22,14 +22,22 @@ console.log(project.tech_stack);
   <div
     class="hidden fixed top-0 left-0 w-full h-full bg-black/90 z-50 modal flex"
   >
+  
     <span
       class="close absolute top-4 right-9 text-gray-100 text-5xl font-bold hover:text-gray-400 cursor-pointer transition-all duration-300"
       >&times;</span
     >
     <div
-      class="m-auto w-full max-w-3xl transition ease-in-out overflow-hidden rounded-2xl"
+      class="m-auto w-full max-w-3xl transition ease-in-out overflow-hidden rounded-2xl relative"
     >
-      <img class="modal-content w-full" />
+     <img class="modal-content w-full" />
+    <a class="prev transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] w-auto p-4 -mt-12 text-white font-bold text-2xl rounded-r-md rounded-l-none left-0">❮</a>
+  <a class="next transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] w-auto p-4 -mt-12 text-white font-bold text-2xl rounded-r-none rounded-l-md right-0">❯</a>
+
+    <div class="caption-container text-center bg-[#222] px-1 py-4 text-white absolute -bottom-[10%] w-full z-50">
+    <p id="caption">Heres a caption</p>
+  </div>
+     
     </div>
   </div>
 
@@ -201,7 +209,7 @@ console.log(project.tech_stack);
         project.images.map((image) => (
           <>
             <img
-              class="cursor-pointer w-full"
+              class="cursor-pointer w-full project_img"
               src={`../../../assets/${image.path}`}
               alt=""
               id={image.id}
@@ -218,16 +226,43 @@ console.log(project.tech_stack);
 <script is:inline>
 const close = document.querySelector(".close");
 const modalContent = document.querySelector(".modal-content");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+const allImg = document.querySelectorAll(".project_img");
+const allImgSpread = [...allImg]
+let setImgIndex;
+
+
+
+let currentIndex;
+next.addEventListener("click", () => {
+  let nextImg = allImgSpread[setImgIndex === 3 ? setImgIndex = 0 : setImgIndex + 1]
+  setImgIndex = ++setImgIndex
+  modalContent.setAttribute(
+    "src",
+    `../../../assets/${nextImg.src.substring(nextImg.src.lastIndexOf("/") + 1)}`
+  );
+
+
+})
+prev.addEventListener("click", () => {
+  let nextImg = allImgSpread[setImgIndex === 0 ? setImgIndex = 3 : setImgIndex - 1]
+  setImgIndex = --setImgIndex
+  modalContent.setAttribute(
+    "src",
+    `../../../assets/${nextImg.src.substring(nextImg.src.lastIndexOf("/") + 1)}`
+  );
+
+
+})
 close.addEventListener("click", () => {
   close.parentElement.classList.add("hidden");
 });
-const allImg = document.querySelectorAll("img");
-const allImgSpread = { ...allImg };
 
-allImg.forEach((img) => {
+allImg.forEach((img, i) => {
   img.addEventListener("click", () => {
     close.parentElement.classList.remove("hidden");
-
+    setImgIndex = i;
     modalContent.setAttribute(
       "src",
       `../../../assets/${img.src.substring(img.src.lastIndexOf("/") + 1)}`
