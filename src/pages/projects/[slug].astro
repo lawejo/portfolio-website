@@ -291,7 +291,7 @@ const myFunction = (x) => {
     console.log(`we in here`);
     mc.on("panleft panright", function (ev) {
       console.log(ev.type);
-      ev.type === 'panright' ? nextImg : prevImg
+      ev.type === 'panright' ? nextImg() : prevImg()
     });
   }
 };
