@@ -12,18 +12,22 @@
     "name": "Python",
     "icon": "python.svg",
     "icon_alt": "python icon"
+    ,"href":"https://www.python.org/"
   },{
     "name": "SQL",
     "icon": "sql.svg",
     "icon_alt": "sql icon"
+    ,"href":"https://developer.mozilla.org/en-US/docs/Glossary/SQL"
   }, {
     "name": "TailwindCSS",
     "icon": "tailwind.svg",
     "icon_alt": "tailwindcss icon"
+    ,"href":"https://tailwindcss.com/"
   },{
     "name": "JavaScript",
     "icon": "javascript.svg",
     "icon_alt": "js icon"
+    ,"href":"https://developer.mozilla.org/en-US/docs/Web/javascript"
   }],
     "url": "https://lawejo.eu.pythonanywhere.com/",
     "github": "https://github.com/lawejo/mysite",
@@ -42,15 +46,23 @@
     "font": "Roboto",
     "description_short": "E-commerce website",
     "description_long": "For my 4th-semester project, I led the creation of a modern e-commerce site for Disc Connection. Our main goal was to improve their online presence and make the website more user-friendly. We used technologies like Next.js, SASS, GitHub, and Redux to enhance the site, showing our dedication to user-focused web development.",
-    "tech_stack": [ {
+    "tech_stack": [ 
+      {
     "name": "NextJS",
     "icon": "nextjs.svg",
-    "icon_alt": "nextjs icon"
-  }, {
+    "icon_alt": "nextjs icon","href":"https://nextjs.org/"
+  }, 
+  {
     "name": "SASS",
     "icon": "sass.svg",
-    "icon_alt": "sass icon"
-  }, {"name":"Stripe","icon":"stripe.svg","icon_alt":"icon of stripe"}],
+    "icon_alt": "sass icon","href":"https://sass-lang.com/"
+  }, 
+  {
+    "name":"Stripe",
+    "icon":"stripe.svg",
+    "icon_alt":"icon of stripe","href":"https://stripe.com/en-dk"
+  }
+  ],
     "url":"https://discconnection.vercel.app/",
     "github":"https://github.com/lawejo/DC-WEBSITE",
     "images":[

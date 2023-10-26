@@ -15,7 +15,6 @@ export async function getStaticPaths() {
   });
 }
 const { project } = Astro.props;
-console.log(project.tech_stack);
 ---
 
 <Layout title={project.title}>
@@ -32,8 +31,8 @@ console.log(project.tech_stack);
       class="m-auto w-full max-w-3xl transition ease-in-out h-fit relative"
     >
      <img class="modal-content w-full rounded-t-lg" />
-    <a class="prev transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] -left-[10%]  xl:-left-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl rounded-2xl">❮</a>
-  <a class="next transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] -right-[10%]  xl:-right-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl  rounded-2xl">❯</a>
+    <a class="prev transition ease-in-out duration-300  hover:bg-black/80 cursor-pointer absolute top-[50%] -left-[10%]  xl:-left-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl rounded-2xl">❮</a>
+  <a class="next transition ease-in-out duration-300  hover:bg-black/80 cursor-pointer absolute top-[50%] -right-[10%]  xl:-right-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl  rounded-2xl">❯</a>
 
     <div class="caption-container text-center bg-[#222] px-1 py-4 text-white absolute -bottom-[10%] w-full z-50 rounded-b-lg">
     <p id="caption"></p>
@@ -63,7 +62,7 @@ console.log(project.tech_stack);
               <a href="/#home">HOME</a>
             </li>
            <li class="projects_menu">
-              <a class="text-accent1" href="#projects">PROJECTS</a>
+              <a class="text-accent1" href="/#projects">PROJECTS</a>
               <div class="absolute w-fit hidden transition ease-in-out duration-1000">
                 <ul
                   class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full "
@@ -88,10 +87,10 @@ console.log(project.tech_stack);
               <a href="/#about">ABOUT</a>
             </li>
             <li>
-              <a href="/contact">SKILL & TECH</a>
+              <a href="/#skills">SKILL & TECH</a>
             </li>
             <li>
-              <a href="../../assets/CV.pdf" download class="nav_link transition ease-in-out duration-200">CV</a>
+              <a href="../../assets/CV.pdf" download class="nav_link transition ease-in-out duration-300">CV</a>
             </li>
           </ul>
         </div>
@@ -119,10 +118,10 @@ console.log(project.tech_stack);
       <div class="nav_links">
           <ul class="flex flex-col justify-between items-center [&>li]:pl-3 [&>*]:text-primary2 [&>li]:min-w-full [&>li]:p-4 mt-14 [&>li]:flex [&>li]:items-center [&>li]:justify-center">
             <li>
-              <a href="#home" class="nav_link transition ease-in-out duration-200">HOME</a>
+              <a href="#home" class="nav_link transition ease-in-out duration-300">HOME</a>
             </li>
             <li  class="projects_menu relative">
-              <a href="#projects" class="nav_link transition ease-in-out duration-200">PROJECTS</a>
+              <a href="" class="nav_link transition ease-in-out duration-300">PROJECTS</a>
                <div class="absolute -left-28 w-fit hidden top-4 z-50">
                 <ul
                   class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full  "
@@ -144,13 +143,13 @@ console.log(project.tech_stack);
               </div>
             </li>
             <li>
-              <a href="#about" class="nav_link transition ease-in-out duration-200">ABOUT</a>
+              <a href="/#about" class="nav_link transition ease-in-out duration-300">ABOUT</a>
             </li>
             <li>
-              <a href="contact" class="nav_link transition ease-in-out duration-200">SKILL & TECH</a>
+              <a href="/#skills" class="nav_link transition ease-in-out duration-300">SKILL & TECH</a>
             </li>
             <li> 
-              <a href="../../assets/CV.pdf" download class="nav_link transition ease-in-out duration-200">CV</a>
+              <a href="../../assets/Lasse_CV.pdf" download class="nav_link transition ease-in-out duration-300">CV</a>
               
             </li>
           </ul>
@@ -173,28 +172,30 @@ console.log(project.tech_stack);
     <div class="gap-6 flex flex-col">
       
         <p class="place-self-start">{project.description_long}</p>
-        <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-200 row-start 1">
+        <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-300 row-start 1">
           <a class="mr-2 hover:bg-primary1 hover:text-white" href={project.url} target="_blank">Demo</a>
           <a class="hover:bg-primary1 hover:text-white" href={project.github} target="_blank">Github repo</a>
         </div>
     </div>
 
       <div class="w-full h-fit lg:mt-4 md:mt-0">
-      <h3 class="text-4xl">Tech stack</h3>
+      <h3 class="text-4xl mb-2">Tech stack</h3>
       <article>
-      <ul class="flex flex-wrap">
+    <ul class="flex flex-wrap">
       {
         project.tech_stack.map((skill) => (
-          <li class="w-16 gap-x-4 relative hint">
-            <img
-              class=" h-full"
-              src={`../../assets/skills/${skill.icon}`}
-              alt={skill.icon_alt}
-            />
-            <div class="hidden rounded-lg p-2 bg-primary1 border border-accent1 text-white absolute -bottom-10 flex justify-center w-[100px] left-1/2 transform -translate-x-1/2 ease-in-out duration-200 z-50">
-              {skill.name}
-              </div>
-          </li>
+          <a href={skill.href} target="_blank">
+            <li class="w-16 gap-x-4 relative hint [&>div]:hover:opacity-100">
+              <img
+                class=" h-full"
+                src={`../../assets/skills/${skill.icon}`}
+                alt={skill.icon_alt}
+              />
+              <div class="opacity-0 rounded-lg p-2 bg-primary1 border border-accent1 text-white absolute -bottom-10 flex justify-center w-[100px] left-1/2 transform -translate-x-1/2 ease-in-out duration-300 z-50">
+                {skill.name}
+                </div>
+            </li>
+          </a>
         ))
       }
     </ul>
@@ -243,7 +244,6 @@ prev.addEventListener("click", prevImg)
 
 allImg.forEach((img, i) => {
   img.addEventListener("click", () => {
-    console.log(img);
     close.parentElement.classList.remove("hidden");
     setImgIndex = i;
     modalContent.setAttribute(
@@ -260,7 +260,7 @@ close.addEventListener("click", () => {
 
 function nextImg() {
   let nextImg = allImgSpread[setImgIndex === 3 ? setImgIndex = 0 : setImgIndex + 1]
-  console.log(nextImg);
+
   setImgIndex = ++setImgIndex
   modalContent.setAttribute(
     "src",
@@ -282,12 +282,8 @@ function prevImg() {
 
 var mc = new Hammer(modalContent);
 mc.on("swipeleft swiperight", function (ev) {
-  console.log(ev.type);
   ev.type === 'swiperight' ? nextImg() : prevImg()
 });
-
-myFunction(x); // Call listener function at run time
-x.addListener(myFunction); // Attach listener function on state changes
 
 
 

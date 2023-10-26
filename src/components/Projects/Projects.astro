@@ -1,12 +1,11 @@
 ---
 import ProjectCard from "../ProjectCard/ProjectCard.astro";
 const { data } = Astro.props;
-console.log(data.length);
 ---
 
 <section
   id="projects"
-  class="intersect box grid grid-rows-[100px_min-content] w-full h-fit pt-24 pb-36 px-20 md:px-24"
+  class="intersect box grid grid-rows-[85px_min-content] w-full h-fit pt-24 pb-36 px-20 md:px-24 overflow-hidden"
 >
   <article id="projects_headline" class="h-fit row-start-1 col-start-1">
     <h2 class="text-5xl font-bold font-bodyfont text-primary1 text-center">
@@ -68,10 +67,11 @@ tl.from("#projects_headline", {
 });
 tl1.from("#project_1", {
   y: 800,
+  delay: 0.2,
 });
 tl2.from("#project_2", {
   y: 800,
-  delay: 0.06,
+  delay: 0.4,
 });
 // tl3.from("#project_3", {
 //   y: 800,

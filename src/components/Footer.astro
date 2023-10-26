@@ -113,7 +113,6 @@ phone.addEventListener("mouseenter", () => {
 phone.addEventListener("mouseleave", () => {
   phone.lastElementChild?.classList.add("hidden");
 });
-console.log(email.firstElementChild.innerHTML);
 email.addEventListener("click", () => {
   navigator.clipboard.writeText(email.firstElementChild.innerHTML);
   const lastElementChild = email.lastElementChild;
@@ -139,5 +138,5 @@ phone.addEventListener("click", () => {
   email.lastElementChild.innerHTML === "Copy to clipholder"
     ? ""
     : (email.lastElementChild.innerHTML = "Copy to clipholder");
-  });
+});
 </script>
