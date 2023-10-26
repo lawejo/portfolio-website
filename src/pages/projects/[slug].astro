@@ -289,9 +289,9 @@ const x = window.matchMedia("(max-width: 800px)");
 const myFunction = (x) => {
   if (x.matches) { // If media query matches
     console.log(`we in here`);
-    mc.on("panleft panright", function (ev) {
+    mc.on("swipeleft swiperight", function (ev) {
       console.log(ev.type);
-      ev.type === 'panright' ? nextImg() : prevImg()
+      ev.type === 'swiperight' ? nextImg() : prevImg()
     });
   }
 };
