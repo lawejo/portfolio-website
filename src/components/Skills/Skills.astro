@@ -14,7 +14,9 @@ interface Props {
   >
     Skills & Tech
   </h2>
-  <div class="row-start-2 w-full px-10 md:px-40 xl:px-[30rem]">
+  <div
+    class="row-start-2 w-full px-12 sm:px-24 md:px-48 lg:px-64 xl:px-96 overflow-hidden"
+  >
     <ul class="flex flex-wrap place-content-center">
       {
         data.map((skill) => (
@@ -75,5 +77,5 @@ skillsList.forEach((element, index) => {
     y: 800,
     duration: 0.25,
   });
-});
+  });
 </script>
