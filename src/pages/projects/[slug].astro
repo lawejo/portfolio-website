@@ -32,8 +32,8 @@ console.log(project.tech_stack);
       class="m-auto w-full max-w-3xl transition ease-in-out h-fit relative"
     >
      <img class="modal-content w-full rounded-t-lg" />
-    <a class="prev transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] -left-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl rounded-2xl">❮</a>
-  <a class="next transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] -right-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl  rounded-2xl">❯</a>
+    <a class="prev transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] -left-[10%]  xl:-left-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl rounded-2xl">❮</a>
+  <a class="next transition ease-in-out duration-200  hover:bg-black/80 cursor-pointer absolute top-[50%] -right-[10%]  xl:-right-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl  rounded-2xl">❯</a>
 
     <div class="caption-container text-center bg-[#222] px-1 py-4 text-white absolute -bottom-[10%] w-full z-50 rounded-b-lg">
     <p id="caption"></p>
@@ -204,7 +204,7 @@ console.log(project.tech_stack);
 
     </div>
     <div
-      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-lg overflow-hidden grid grid-cols-2 grid-rows-4 gap-4 min-w-[300px]"
+      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-lg overflow-hidden grid grid-cols-2 grid-row-2 lg:grid-rows-4 gap-4 min-w-[300px]"
     >
       {
         project.images.map((image) => (
@@ -238,6 +238,8 @@ let setImgIndex;
 let currentIndex;
 
 // ---------------  Modal pop up ---------------
+next.addEventListener("click", nextImg)
+prev.addEventListener("click", prevImg)
 
 allImg.forEach((img, i) => {
   img.addEventListener("click", () => {
@@ -256,7 +258,7 @@ close.addEventListener("click", () => {
   close.parentElement.classList.add("hidden");
 });
 
-next.addEventListener("click", () => {
+function nextImg() {
   let nextImg = allImgSpread[setImgIndex === 3 ? setImgIndex = 0 : setImgIndex + 1]
   console.log(nextImg);
   setImgIndex = ++setImgIndex
@@ -265,10 +267,8 @@ next.addEventListener("click", () => {
     `../../../assets/${nextImg.src.substring(nextImg.src.lastIndexOf("/") + 1)}`
   );
   captionContainer.innerHTML = nextImg.dataset.value
-
-})
-
-prev.addEventListener("click", () => {
+}
+function prevImg() {
   let prevImg = allImgSpread[setImgIndex === 0 ? setImgIndex = 3 : setImgIndex - 1]
   setImgIndex = --setImgIndex
   modalContent.setAttribute(
@@ -276,11 +276,28 @@ prev.addEventListener("click", () => {
     `../../../assets/${prevImg.src.substring(prevImg.src.lastIndexOf("/") + 1)}`
   );
   captionContainer.innerHTML = prevImg.dataset.value
+}
+// ---------------  Media query ---------------
 
 
-})
+var mc = new Hammer(modalContent);
 
 
+
+const x = window.matchMedia("(max-width: 800px)");
+
+const myFunction = (x) => {
+  if (x.matches) { // If media query matches
+    console.log(`we in here`);
+    mc.on("panleft panright", function (ev) {
+      console.log(ev.type);
+      ev.type === 'panright' ? nextImg : prevImg
+    });
+  }
+};
+
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
 
 
 

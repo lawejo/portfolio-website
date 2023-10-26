@@ -45,11 +45,15 @@ const { title } = Astro.props;
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"
     ></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"
+      integrity="sha512-qRj8N7fxOHxPkKjnQ9EJgLJ8Ng1OK7seBn1uk8wkqaXpa7OA13LO6txQ7+ajZonyc9Ts4K/ugXljevkFTUGBcw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
     <title>{title}</title>
   </head>
   <body
-    class="relative bg-white font-bodyfont font-light leading-5 text-black h-full overflow-x-hidden"
+    class="relative bg-white font-bodyfont font-light leading-5 text-black min-h-full"
   >
     <slot />
     <style is:global>
@@ -94,7 +98,6 @@ const { title } = Astro.props;
         font-weight: 300;
         line-height: 1.4;
         color: #0f0f0f;
-        height: 100%;
       }
       p {
         margin-bottom: 1rem;
