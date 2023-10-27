@@ -331,16 +331,6 @@ for (const link of navLinks) {
     link.classList.remove('text-gray-500');
   });
 }
-// --------------- Hint ---------------
-const hints = Array.from(document.querySelectorAll('.hint'))
-for (const hint of hints) {
-  hint.addEventListener('mouseover', () => {
-    hint.lastElementChild.classList.remove('hidden')
-  })
 
-  hint.addEventListener('mouseout', () => {
-    hint.lastElementChild.classList.add('hidden')
-  })
-}
 </script>
 
