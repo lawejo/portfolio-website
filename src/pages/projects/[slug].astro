@@ -310,12 +310,10 @@ const menuClose = document.querySelector(".closeSlide")
 
 burgerMenu.firstElementChild.addEventListener('click', () => {
   slideMenu.style.transform = "translateX(0%)"
-  slideMenu.classList.remove("hidden")
 })
 
 menuClose.addEventListener('click', () => {
   slideMenu.style.transform = "translateX(100%)"
-  slideMenu.classList.add("hidden")
 })
 
 // --------------- Nav menu hover---------------
