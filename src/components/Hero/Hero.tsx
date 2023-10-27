@@ -21,7 +21,7 @@ export default function App() {
   }, []);
 
   return (
-    <section id="home" className="intersect h-screen bg-primary1 border-t border-white/20 overflow-x-hidden">
+    <section id="home" className="intersect h-screen bg-primary1 border-t border-white/20">
       <div className="w-full h-full flex justify-center align-end">
         <div className="w-fit self-center mb-12 [&>*]:text-white [&>*]:mb-5">
           <p className="w-fit text-3xl font-normal">I'm</p>
