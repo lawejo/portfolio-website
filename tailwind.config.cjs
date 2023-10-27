@@ -3,6 +3,9 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			zIndex: {
+				'100': '100',
+			},
 			colors: {
 				'primary1': '#062240',
 				'primary2': '#f1f1f1ed',
