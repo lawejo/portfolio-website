@@ -34,7 +34,7 @@
      "images":[
       {"path":"twitterclone_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page from where you can login. This triggers a post request where the user credentials are verified.","api_link":[{"a_text":"Login", "a_href":"https://github.com/lawejo/Twitter-clone/blob/main/bridges/login.py"}]},
       
-      {"path":"twitterclone_2.png","alt":"this is the alt","id":"2","caption":"This is the landing page after the user logs in. From here they can do different types of tweets, follow other users and several more actions.","api_link":[{"a_text":"Tweet API","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_tweet.py"},{"a_text":"Follow","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"}]},
+      {"path":"twitterclone_2.png","alt":"this is the alt","id":"2","caption":"This is the landing page after the user logs in. From here they can do different types of tweets, follow other users and several more actions.","api_link":[{"a_text":"Tweet","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_tweet.py"},{"a_text":"Follow","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"}]},
       
       {"path":"twitterclone_3.png","alt":"this is the alt","id":"3","caption":"This is the users personal page from they can see their own tweets of all types. From here they can go to edit their info or follow other users","api_link":[{"a_text":"Edit Profile","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Follow","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"}]},
       
