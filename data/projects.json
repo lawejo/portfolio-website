@@ -69,9 +69,19 @@
     "url":"https://discconnection.vercel.app/",
     "github":"https://github.com/lawejo/DC-WEBSITE",
     "images":[
-      {"path":"discconnection_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page website.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"}]},
-      {"path":"discconnection_2.png","alt":"this is the alt","id":"2","caption":"This is a screenshot after the user has put a few items in the basket and is about to check out. This flow is from stripe.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"}]},
-      {"path":"discconnection_3.png","alt":"this is the alt","id":"3","caption":"This is a screenshot of the users basket.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"}]},
-      {"path":"discconnection_4.png","alt":"this is the alt","id":"4","caption":"The product grid along with all information about the products.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"}]}]
+      {"path":"discconnection_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page website.",
+      "api_link":[
+        {"a_text":"Render Frontpage","a_href":"https://github.com/lawejo/DC-WEBSITE/blob/main/pages/index.js"}]},
+
+      {"path":"discconnection_2.png","alt":"this is the alt","id":"2","caption":"This is a screenshot after the user has put a few items in the basket and is about to check out. This flow is from stripe.",
+      "api_link":[]},
+
+      {"path":"discconnection_3.png","alt":"this is the alt","id":"3","caption":"This is a screenshot of the users basket.",
+      "api_link":[
+        {"a_text":"Render Cart","a_href":"https://github.com/lawejo/DC-WEBSITE/blob/main/pages/cart.js"}]},
+
+      {"path":"discconnection_4.png","alt":"this is the alt","id":"4","caption":"The product grid along with all information about the products.",
+      "api_link":[
+        {"a_text":"Render productlist","a_href":"https://github.com/lawejo/DC-WEBSITE/blob/main/pages/productList/%5Bcategory%5D.js"}]}]
   }
 ]

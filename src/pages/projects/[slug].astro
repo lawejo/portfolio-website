@@ -39,9 +39,9 @@ const { project } = Astro.props;
   <a class="next transition ease-in-out duration-300  hover:bg-black/80 cursor-pointer absolute top-[50%] -right-[10%]  xl:-right-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl  rounded-2xl">❯</a>
 
     <div class="caption-container text-center bg-[#222] px-1 py-4 text-white absolute -bottom-[10%] w-full z-50 rounded-b-lg">
-    <p class="w-fit caption [&>span]:mr-2" >
+    <p class="w-fit caption [&>span]:mr-2 mx-auto" >
        <span></span>
-      <span class="italic"></span>
+      <span class="italic "></span>
     </p> 
 
   <div class="hidden">
@@ -264,6 +264,7 @@ next.addEventListener("click", nextImg)
 prev.addEventListener("click", prevImg)
 
 allImg.forEach((img, i) => {
+  const linksToAppend = allApiLinks.filter((link) => link.id === img.id);
   img.addEventListener("click", () => {
     close.parentElement.classList.remove("hidden");
     setImgIndex = i;
@@ -273,10 +274,14 @@ allImg.forEach((img, i) => {
       `../../../assets/${img.src.substring(img.src.lastIndexOf("/") + 1)}`
     );
     // set caption 
-    caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on GitHub:`
+    console.log(linksToAppend.length)
+    if (linksToAppend < 0) {
+      caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on GitHub:`
+    } else {
+      caption.firstElementChild.innerHTML = img.dataset.value
+    }
     // append links to github
     let htmlToAppend = "";
-    const linksToAppend = allApiLinks.filter((link) => link.id === img.id);
 
     linksToAppend.forEach((link, index) => {
       htmlToAppend += `<a class="hover:text-accent1 duration-300 transition ease-in-out" target="_blank" href="${link.href}">${link.innerText}</a>`;
@@ -294,16 +299,22 @@ close.addEventListener("click", () => {
 
 function nextImg() {
   let nextImg = allImgSpread[setImgIndex === 3 ? setImgIndex = 0 : setImgIndex + 1]
+  const linksToAppend = allApiLinks.filter((link) => link.id === nextImg.id);
 
   setImgIndex = ++setImgIndex
   modalContent.setAttribute(
     "src",
     `../../../assets/${nextImg.src.substring(nextImg.src.lastIndexOf("/") + 1)}`
   );
-  caption.firstElementChild.innerHTML = `${nextImg.dataset.value} View the code on GitHub:`
-  let htmlToAppend = "";
-  const linksToAppend = allApiLinks.filter((link) => link.id === nextImg.id);
 
+  if (linksToAppend < 0) {
+    caption.firstElementChild.innerHTML = `${nextImg.dataset.value} View the code on GitHub:`
+  } else {
+    caption.firstElementChild.innerHTML = nextImg.dataset.value
+  }
+
+
+  let htmlToAppend = "";
   linksToAppend.forEach((link, index) => {
     htmlToAppend += `<a class="hover:text-accent1 duration-300 transition ease-in-out" target="_blank" href="${link.href}">${link.innerText}</a>`;
     if (index < linksToAppend.length - 1) {
@@ -314,16 +325,21 @@ function nextImg() {
 }
 function prevImg() {
   let prevImg = allImgSpread[setImgIndex === 0 ? setImgIndex = 3 : setImgIndex - 1]
+  const linksToAppend = allApiLinks.filter((link) => link.id === prevImg.id);
   setImgIndex = --setImgIndex
   modalContent.setAttribute(
     "src",
     `../../../assets/${prevImg.src.substring(prevImg.src.lastIndexOf("/") + 1)}`
   );
-  caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
+
+  if (linksToAppend < 0) {
+    caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
+
+  } else {
+    caption.firstElementChild.innerHTML = prevImg.dataset.value
+  }
+
   let htmlToAppend = "";
-
-  const linksToAppend = allApiLinks.filter((link) => link.id === prevImg.id);
-
   linksToAppend.forEach((link, index) => {
     htmlToAppend += `<a class="hover:text-accent1 duration-300 transition ease-in-out" target="_blank" href="${link.href}">${link.innerText}</a>`;
     if (index < linksToAppend.length - 1) {
