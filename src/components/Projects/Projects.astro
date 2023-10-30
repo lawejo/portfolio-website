@@ -5,7 +5,7 @@ const { data } = Astro.props;
 
 <section
   id="projects"
-  class="intersect box grid grid-rows-[85px_min-content] w-full h-fit pt-24 pb-36 px-20 md:px-24 overflow-hidden"
+  class="intersect box grid grid-rows-[85px_min-content] w-full h-fit pt-24 pb-36 overflow-hidden"
 >
   <article id="projects_headline" class="h-fit row-start-1 col-start-1">
     <h2
@@ -18,7 +18,7 @@ const { data } = Astro.props;
     <article
       class={data.length >= 3
         ? "col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"
-        : "col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-2 xl:mx-48 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2"}
+        : "col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-2 xl:mx-48 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2 mx-auto"}
     >
       {data.map((project) => <ProjectCard data={project} />)}
     </article>

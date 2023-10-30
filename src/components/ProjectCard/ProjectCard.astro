@@ -17,7 +17,10 @@ export interface Data {
 }
 ---
 
-<div id={`project_${data.id}`} class="card2 w-full h-72 grid">
+<div
+  id={`project_${data.id}`}
+  class="card2 w-full max-h-72 grid max-w-sm sm:max-w-lg"
+>
   <div
     id=`info_${data.id}`
     class="opacity-0 hover:opacity-100 duration-300 rounded-2xl w-full min-h-full bg-primary1 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle text-primary2 py-10"
@@ -55,7 +58,7 @@ export interface Data {
         <>
           <div class="absolute top-0 left-0 w-full min-h-full bg-primary1/70" />
           <img
-            class="h-full w-full object-cover rounded-2xl col-start-1 row-start-1"
+            class="max-h-52 sm:max-h-96 w-full object-cover rounded-2xl col-start-1 row-start-1"
             src={`assets/${data.cover}`}
             alt={data.cover_alt}
           />

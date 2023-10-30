@@ -16,6 +16,8 @@ export async function getStaticPaths() {
   });
 }
 const { project } = Astro.props;
+
+
 ---
 
 <Layout title={project.title}>
@@ -37,13 +39,26 @@ const { project } = Astro.props;
   <a class="next transition ease-in-out duration-300  hover:bg-black/80 cursor-pointer absolute top-[50%] -right-[10%]  xl:-right-[20%] w-auto p-4 -mt-12 text-white font-bold text-4xl  rounded-2xl">❯</a>
 
     <div class="caption-container text-center bg-[#222] px-1 py-4 text-white absolute -bottom-[10%] w-full z-50 rounded-b-lg">
-    <p id="caption"></p>
+    <p class="w-fit caption [&>span]:mr-2" >
+       <span></span>
+      <span class="italic"></span>
+    </p> 
+
+  <div class="hidden">
+    
+    {project.images.map((image)=>{const id=image.id; return image.api_link.map((link)=> <a class="api_link" id={id} href={link.a_href}>{link.a_text}</a> )})}
+  </div>
+
+   
   </div>
      
     </div>
   </div>
 
   <div id="home"></div>
+  
+
+   
   <nav class="bg-primary1 w-full h-20 z-40 sticky top-0">
     <div class="bg-primary1 grid w-full px-12 h-full">
       <a
@@ -218,6 +233,7 @@ const { project } = Astro.props;
               alt={image.alt}
               id={image.id}
               data-value={image.caption}
+             
             />
             
           </>
@@ -233,10 +249,13 @@ const { project } = Astro.props;
 const close = document.querySelector(".close");
 const modalContent = document.querySelector(".modal-content");
 const captionContainer = document.querySelector(".caption-container");
+const caption = document.querySelector(".caption");
+const apiLinkContainer = document.querySelector(".apilink-container");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 const allImg = document.querySelectorAll(".project_img");
 const allImgSpread = [...allImg]
+const allApiLinks = Array.from(document.querySelectorAll(".api_link"))
 let setImgIndex;
 let currentIndex;
 
@@ -248,11 +267,24 @@ allImg.forEach((img, i) => {
   img.addEventListener("click", () => {
     close.parentElement.classList.remove("hidden");
     setImgIndex = i;
+    // Set modal source
     modalContent.setAttribute(
       "src",
       `../../../assets/${img.src.substring(img.src.lastIndexOf("/") + 1)}`
     );
-    captionContainer.innerHTML = img.dataset.value
+    // set caption 
+    caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on GitHub:`
+    // append links to github
+    let htmlToAppend = "";
+    const linksToAppend = allApiLinks.filter((link) => link.id === img.id);
+
+    linksToAppend.forEach((link, index) => {
+      htmlToAppend += `<a class="hover:text-accent1 duration-300 transition ease-in-out" target="_blank" href="${link.href}">${link.innerText}</a>`;
+      if (index < linksToAppend.length - 1) {
+        htmlToAppend += " / ";
+      }
+    });
+    caption.lastElementChild.innerHTML = htmlToAppend
   });
 });
 
@@ -268,7 +300,17 @@ function nextImg() {
     "src",
     `../../../assets/${nextImg.src.substring(nextImg.src.lastIndexOf("/") + 1)}`
   );
-  captionContainer.innerHTML = nextImg.dataset.value
+  caption.firstElementChild.innerHTML = `${nextImg.dataset.value} View the code on GitHub:`
+  let htmlToAppend = "";
+  const linksToAppend = allApiLinks.filter((link) => link.id === nextImg.id);
+
+  linksToAppend.forEach((link, index) => {
+    htmlToAppend += `<a class="hover:text-accent1 duration-300 transition ease-in-out" target="_blank" href="${link.href}">${link.innerText}</a>`;
+    if (index < linksToAppend.length - 1) {
+      htmlToAppend += " / ";
+    }
+  });
+  caption.lastElementChild.innerHTML = htmlToAppend
 }
 function prevImg() {
   let prevImg = allImgSpread[setImgIndex === 0 ? setImgIndex = 3 : setImgIndex - 1]
@@ -277,8 +319,21 @@ function prevImg() {
     "src",
     `../../../assets/${prevImg.src.substring(prevImg.src.lastIndexOf("/") + 1)}`
   );
-  captionContainer.innerHTML = prevImg.dataset.value
+  caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
+  let htmlToAppend = "";
+
+  const linksToAppend = allApiLinks.filter((link) => link.id === prevImg.id);
+
+  linksToAppend.forEach((link, index) => {
+    htmlToAppend += `<a class="hover:text-accent1 duration-300 transition ease-in-out" target="_blank" href="${link.href}">${link.innerText}</a>`;
+    if (index < linksToAppend.length - 1) {
+      htmlToAppend += " / ";
+    }
+  });
+  caption.lastElementChild.innerHTML = htmlToAppend
 }
+
+
 // ---------------  swipin---------------
 
 
