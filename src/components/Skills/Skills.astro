@@ -5,7 +5,10 @@ interface Props {
 }
 ---
 
-<section id="skills" class="skillstrigger overflow-hidden flex flex-col py-16">
+<section
+  id="skills"
+  class="skillstrigger intersect overflow-hidden flex flex-col py-16"
+>
   <h2
     class="font-bold font-bodyfont text-5xl justify-self-center mb-10 skills_headline text-center"
   >
@@ -64,6 +67,6 @@ skillsList.forEach((element, index) => {
   tl8.from(element, {
     y: 800,
     duration: 0.25,
+    });
   });
-});
 </script>
