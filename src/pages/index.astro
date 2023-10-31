@@ -165,7 +165,6 @@ function handleIntersection(entries, observer) {
       const boxId = entry.target.id;
       const { ...matchingAnkers } = document.querySelectorAll(`#${boxId}`);
       currentSection = matchingAnkers[0];
-      console.log(currentSection);
       const [...allAs] = document.querySelectorAll("a");
       allAs.map((a) => {
         const ahref = a.href.substring(a.href.lastIndexOf("/") + 2);
