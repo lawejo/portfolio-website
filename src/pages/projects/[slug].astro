@@ -178,7 +178,7 @@ const { project } = Astro.props;
   </div>
   <section
     class="grid grid-cols-12 grid-rows-[min-content_min-content_min-content] lg:grid-rows-[min-content_min-content] lg:pl-48
-     lg:pr-32 mt-8 h-[100vh] lg:h-[75vh]"
+     lg:pr-32 mt-8 h-full"
   >
     <h2
       class="row-start-1 text-5xl col-span-full border-b-2 border-project_gradient mb-8"
@@ -225,7 +225,7 @@ const { project } = Astro.props;
 
     </div>
     <div
-      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-lg overflow-hidden grid grid-cols-2 grid-row-2 lg:grid-rows-4 gap-4 min-w-[300px]"
+      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-lg overflow-hidden grid grid-cols-2 grid-row-2  gap-4 lg:gap-2 min-w-[300px]"
     >
       {
         project.images.map((image) => (
