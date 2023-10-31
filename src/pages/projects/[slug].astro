@@ -275,10 +275,10 @@ allImg.forEach((img, i) => {
     );
     // set caption 
     if (linksToAppend.length > 0) {
-      console.log(`< 0`);
+     
       caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on GitHub:`
     } else {
-      console.log(`> 0`);
+     
       caption.firstElementChild.innerHTML = img.dataset.value
     }
     // append links to github
@@ -309,10 +309,10 @@ function nextImg() {
   );
 
   if (linksToAppend.length > 0) {
-    console.log(`< 0`);
+   
     caption.firstElementChild.innerHTML = `${nextImg.dataset.value} View the code on GitHub:`
   } else {
-    console.log(`> 0`);
+   
     caption.firstElementChild.innerHTML = nextImg.dataset.value
   }
 
@@ -336,10 +336,10 @@ function prevImg() {
   );
 
   if (linksToAppend.length > 0) {
-    console.log(`< 0`);
+   
     caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
   } else {
-    console.log(`> 0`);
+   
     caption.firstElementChild.innerHTML = prevImg.dataset.value
   }
 
