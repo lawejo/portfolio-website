@@ -59,120 +59,122 @@ const { project } = Astro.props;
   
 
    
-  <nav class="bg-primary1 w-full h-20 z-40 sticky top-0">
-    <div class="bg-primary1 grid w-full px-12 h-full">
-      <a
-        class="ml-4 flex items-center text-offwhite text-2xl font-normal max-w-fit font-bodyfont col-start-1 max-h-ful"
-        href="/"
-      >
-        LWJ
-      </a>
+  <div class="overflow-x-hidden">
+    <nav class="bg-primary1 w-full h-20 z-40 sticky top-0">
+      <div class="bg-primary1 grid w-full px-12 h-full">
+        <a
+          class="ml-4 flex items-center text-offwhite text-2xl font-normal max-w-fit font-bodyfont col-start-1 max-h-ful"
+          href="/"
+        >
+          LWJ
+        </a>
+        <div
+          id="end_of_nav"
+          class="hidden md:flex flex-row-reverse items-center col-start-2"
+        >
+          <div id="nav_links">
+            <ul
+              class="flex justify-between items-center [&>li]:pl-3 [&>*]:text-primary2"
+            >
+              <li>
+                <a href="/">HOME</a>
+              </li>
+             <li class="projects_menu">
+                <a class="text-accent1" href="/#projects">PROJECTS</a>
+                <div class="absolute w-fit hidden transition ease-in-out duration-1000">
+                  <ul
+                    class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full "
+                  >
+                    {
+                      data.map((dataproject, index) => {
+                        return data.length === index + 1 ? (
+                          <a href=`/projects/${dataproject.slug}` class={project.name === dataproject.name ? `border bg-gray-300 transition ease-in-out duration-300`:`border hover:bg-gray-300 transition ease-in-out duration-300`}>
+                            {dataproject.name}
+                          </a>
+                        ) : (
+                          <a href=`/projects/${dataproject.slug}` class={project.name === dataproject.name ? `border-t border-x bg-gray-300 transition ease-in-out duration-300`:`border-t border-x hover:bg-gray-300 transition ease-in-out duration-300`}>
+                            {dataproject.name}
+                          </a>
+                        );
+                      })
+                    }
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="/#about">ABOUT</a>
+              </li>
+              <li>
+                <a href="/#skills">SKILL & TECH</a>
+              </li>
+              <li>
+                <a class="nav_link transition ease-in-out duration-300 cursor-pointer cv">CV</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+         <div class="flex md:hidden col-start-2 items-center place-content-end cursor-pointer burgerMenu">
+          <svg viewBox="0 0 100 80" width="40" height="40" class="text-white">
+            <rect fill="white" class="one" width="100" height="3"></rect>
+            <rect fill="white" class="two"y="30" width="100" height="3"></rect>
+            <rect fill="white" class="three" y="60" width="100" height="3"></rect>
+          </svg>
+        </div>
+      </div>
       <div
-        id="end_of_nav"
-        class="hidden md:flex flex-row-reverse items-center col-start-2"
+        class="scrollIndicator h-0.5 self-end -ml-12 bg-white/20 col-span-2 hidden"
       >
-        <div id="nav_links">
-          <ul
-            class="flex justify-between items-center [&>li]:pl-3 [&>*]:text-primary2"
-          >
-            <li>
-              <a href="/">HOME</a>
-            </li>
-           <li class="projects_menu">
-              <a class="text-accent1" href="/#projects">PROJECTS</a>
-              <div class="absolute w-fit hidden transition ease-in-out duration-1000">
-                <ul
-                  class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full "
-                >
-                  {
-                    data.map((dataproject, index) => {
-                      return data.length === index + 1 ? (
-                        <a href=`/projects/${dataproject.slug}` class={project.name === dataproject.name ? `border bg-gray-300 transition ease-in-out duration-300`:`border hover:bg-gray-300 transition ease-in-out duration-300`}>
-                          {dataproject.name}
-                        </a>
-                      ) : (
-                        <a href=`/projects/${dataproject.slug}` class={project.name === dataproject.name ? `border-t border-x bg-gray-300 transition ease-in-out duration-300`:`border-t border-x hover:bg-gray-300 transition ease-in-out duration-300`}>
-                          {dataproject.name}
-                        </a>
-                      );
-                    })
-                  }
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a href="/#about">ABOUT</a>
-            </li>
-            <li>
-              <a href="/#skills">SKILL & TECH</a>
-            </li>
-            <li>
-              <a class="nav_link transition ease-in-out duration-300 cursor-pointer cv">CV</a>
-            </li>
-          </ul>
-        </div>
+        <div class="progress bg-accent1 h-full"></div>
       </div>
-       <div class="flex md:hidden col-start-2 items-center place-content-end cursor-pointer burgerMenu"> 
-        <svg viewBox="0 0 100 80" width="40" height="40" class="text-white">
-          <rect fill="white" class="one" width="100" height="3"></rect>
-          <rect fill="white" class="two"y="30" width="100" height="3"></rect>
-          <rect fill="white" class="three" y="60" width="100" height="3"></rect>
-        </svg>
+    
       </div>
-    </div>
-    <div
-      class="scrollIndicator h-0.5 self-end -ml-12 bg-white/20 col-span-2 hidden"
-    >
-      <div class="progress bg-accent1 h-full"></div>
-    </div>
-          
-    </div>
-     
-        <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 transform translate-x-full ease-in-out duration-500 slideMenu">
-          <span
-      class="closeSlide absolute top-0 right-4 text-gray-100 text-4xl  hover:text-gray-400 cursor-pointer transition-all duration-300"
-      >&times;</span>
-      <div class="nav_links">
-          <ul class="flex flex-col justify-between items-center [&>li]:pl-3 [&>*]:text-primary2 [&>li]:min-w-full [&>li]:p-4 mt-14 [&>li]:flex [&>li]:items-center [&>li]:justify-center">
-            <li>
-              <a href="/" class="nav_link transition ease-in-out duration-300">HOME</a>
-            </li>
-            <li  class="projects_menu relative">
-              <a href="" class="nav_link transition ease-in-out duration-300">PROJECTS</a>
-               <div class="absolute -left-28 w-fit hidden top-4 z-50">
-                <ul
-                  class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full  "
-                >
-                  {
-                    data.map((dataproject, index) => {
-                      return data.length === index + 1 ? (
-                        <a href=`/projects/${dataproject.slug}` class={dataproject.name === project.name ? `border bg-gray-300 transition ease-in-out duration-300`:`border hover:bg-gray-300 transition ease-in-out duration-300`}>
-                          {dataproject.name}
-                        </a>
-                      ) : (
-                        <a href=`/projects/${dataproject.slug}` class={dataproject.name === project.name ? `border-t border-x bg-gray-300 transition ease-in-out duration-300`:`border-t border-x hover:bg-gray-300 transition ease-in-out duration-300`}>
-                          {dataproject.name}
-                        </a>
-                      );
-                    })
-                  }
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a href="/#about" class="nav_link transition ease-in-out duration-300">ABOUT</a>
-            </li>
-            <li>
-              <a href="/#skills" class="nav_link transition ease-in-out duration-300">SKILL & TECH</a>
-            </li>
-            <li> 
-              <a class="nav_link transition ease-in-out duration-300 cursor-pointer cv">CV</a>
-              
-            </li>
-          </ul>
-        </div>
-        </div>
-  </nav>
+    
+          <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 transform translate-x-full ease-in-out duration-500 slideMenu">
+            <span
+        class="closeSlide absolute top-0 right-4 text-gray-100 text-4xl  hover:text-gray-400 cursor-pointer transition-all duration-300"
+        >&times;</span>
+        <div class="nav_links">
+            <ul class="flex flex-col justify-between items-center [&>li]:pl-3 [&>*]:text-primary2 [&>li]:min-w-full [&>li]:p-4 mt-14 [&>li]:flex [&>li]:items-center [&>li]:justify-center">
+              <li>
+                <a href="/" class="nav_link transition ease-in-out duration-300">HOME</a>
+              </li>
+              <li  class="projects_menu relative">
+                <a href="" class="nav_link transition ease-in-out duration-300">PROJECTS</a>
+                 <div class="absolute -left-28 w-fit hidden top-4 z-50">
+                  <ul
+                    class="bg-white w-full text-black [&>a]:p-2 rounded-md overflow-hidden [&>a]:cursor-pointer flex flex-col [&>a]:text-left [&>a]:min-w-full  "
+                  >
+                    {
+                      data.map((dataproject, index) => {
+                        return data.length === index + 1 ? (
+                          <a href=`/projects/${dataproject.slug}` class={dataproject.name === project.name ? `border bg-gray-300 transition ease-in-out duration-300`:`border hover:bg-gray-300 transition ease-in-out duration-300`}>
+                            {dataproject.name}
+                          </a>
+                        ) : (
+                          <a href=`/projects/${dataproject.slug}` class={dataproject.name === project.name ? `border-t border-x bg-gray-300 transition ease-in-out duration-300`:`border-t border-x hover:bg-gray-300 transition ease-in-out duration-300`}>
+                            {dataproject.name}
+                          </a>
+                        );
+                      })
+                    }
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="/#about" class="nav_link transition ease-in-out duration-300">ABOUT</a>
+              </li>
+              <li>
+                <a href="/#skills" class="nav_link transition ease-in-out duration-300">SKILL & TECH</a>
+              </li>
+              <li>
+                <a class="nav_link transition ease-in-out duration-300 cursor-pointer cv">CV</a>
+    
+              </li>
+            </ul>
+          </div>
+          </div>
+    </nav>
+  </div>
   <section
     class="grid grid-cols-12 grid-rows-[min-content_min-content_min-content] lg:grid-rows-[min-content_min-content] pl-16 lg:pl-48
     pr-10 lg:pr-32 mt-8 h-[100vh]"
@@ -275,10 +277,10 @@ allImg.forEach((img, i) => {
     );
     // set caption 
     if (linksToAppend.length > 0) {
-     
+
       caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on GitHub:`
     } else {
-     
+
       caption.firstElementChild.innerHTML = img.dataset.value
     }
     // append links to github
@@ -309,10 +311,10 @@ function nextImg() {
   );
 
   if (linksToAppend.length > 0) {
-   
+
     caption.firstElementChild.innerHTML = `${nextImg.dataset.value} View the code on GitHub:`
   } else {
-   
+
     caption.firstElementChild.innerHTML = nextImg.dataset.value
   }
 
@@ -336,10 +338,10 @@ function prevImg() {
   );
 
   if (linksToAppend.length > 0) {
-   
+
     caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
   } else {
-   
+
     caption.firstElementChild.innerHTML = prevImg.dataset.value
   }
 
