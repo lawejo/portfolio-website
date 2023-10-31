@@ -38,7 +38,7 @@
       
       {"path":"twitterclone_3.png","alt":"this is the alt","id":"3","caption":"This is the users personal page from they can see their own tweets of all types. From here they can go to edit their info or follow other users","api_link":[{"a_text":"Edit Profile","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Follow","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"}]},
       
-      {"path":"twitterclone_4.png","alt":"this is the alt","id":"4","caption":"This is where the users can edit their information, including their profile picture and cover image.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"}]}]
+      {"path":"twitterclone_4.png","alt":"this is the alt","id":"4","caption":"This is where the users can edit their information, including their profile picture and cover image.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_upate_user_info_images.py"}]}]
   },
   {
     "id": "2",
