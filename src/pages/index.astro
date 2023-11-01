@@ -13,8 +13,7 @@ import DownloadModal from "../components/DownloadModal.astro";
   
   <div id="home"></div>
   <DownloadModal href={'/assets/Lasse_CV.pdf'}/>
-  <nav class="bg-primary1 w-full h-20 z-40 sticky top-0">
-      <div class="overflow-x-clip h-full">
+    <nav class="bg-primary1 w-full h-20 z-40 sticky top-0 " style="contain:paint">
       <div class="bg-primary1 grid w-full px-12 h-full">
         <a
           class="ml-4 flex items-center text-offwhite text-2xl font-normal max-w-fit font-bodyfont col-start-1 max-h-ful"
@@ -129,9 +128,7 @@ import DownloadModal from "../components/DownloadModal.astro";
       >
         <div class="progress bg-accent1 h-full"></div>
       </div>
-      </div>
     </nav>
-  
     <Hero client:load />
     <Projects data={data} />
     <About />
@@ -211,12 +208,16 @@ const menuClose = document.querySelector(".closeSlide")
 burgerMenu.firstElementChild.addEventListener('click', () => {
   slideMenu.classList.add("translate-x-0")
   slideMenu.classList.remove("translate-x-full")
+  slideMenu.parentElement.style.contain = null
 
 })
 
 menuClose.addEventListener('click', () => {
   slideMenu.classList.add("translate-x-full")
   slideMenu.classList.remove("translate-x-0")
+  setTimeout(() => {
+    slideMenu.parentElement.style.contain = 'paint';
+  }, 400);
 })
 
 // --------------- Nav menu hover---------------
