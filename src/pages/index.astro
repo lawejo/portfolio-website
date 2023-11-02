@@ -206,18 +206,16 @@ const menuClose = document.querySelector(".closeSlide")
 
 
 burgerMenu.firstElementChild.addEventListener('click', () => {
-  // slideMenu.classList.add("translate-x-0")
-  // slideMenu.classList.remove("translate-x-full")
-  slideMenu.classList.add("z-10")
+
   slideMenu.classList.remove("-z-10")
+  slideMenu.classList.add("z-10")
   slideMenu.classList.remove("opacity-0")
   slideMenu.classList.add("opacity-1")
 
 })
 
 menuClose.addEventListener('click', () => {
-  // slideMenu.classList.add("translate-x-full")
-  // slideMenu.classList.remove("translate-x-0")
+
   slideMenu.classList.remove("opacity-1")
   slideMenu.classList.add("opacity-0")
   slideMenu.classList.remove("z-10")
