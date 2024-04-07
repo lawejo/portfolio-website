@@ -22,10 +22,10 @@
       class="row-start-3 col-start-2 col-end-5 lg:col-start-3 flex lg:row-start-2 flex-col w-full lg:w-[55ch] leading-normal [&>p]:mb-2 [&>h2]:text-primary1 [&>h2]:font-bold"
     >
       <p>
-        Hello! I'm a web development student in my sixth semester at KEA,
+        Hello! I'm a web development student in my final semester at KEA,
         passionate about learning and growing as a developer.
       </p><p>
-        I'm actively seeking a <span class="font-bold">January internship</span>
+        I'm actively seeking a <span class="font-bold">fulltime position</span>
          in Frontend, Backend, or Fullstack development. My journey is marked by
         a solid foundation and a commitment to continuous improvement.
       </p>
@@ -51,44 +51,44 @@
 </section>
 
 <script is:inline>
-let tl4 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".abouttrigger",
-    start: "top center",
-    end: "140px center",
-    scrub: false,
-    toggleActions: "play none none reset",
-  },
-});
+  let tl4 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".abouttrigger",
+      start: "top center",
+      end: "140px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
 
-let tl5 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".abouttrigger",
-    start: "top center",
-    end: "210px center",
-    scrub: false,
-    toggleActions: "play none none reset",
-  },
-});
+  let tl5 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".abouttrigger",
+      start: "top center",
+      end: "210px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
 
-let tl6 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".abouttrigger",
-    start: "top center",
-    end: "280px center",
-    scrub: false,
-    toggleActions: "play none none reset",
-  },
-});
-tl4.from("#about_headline", {
-  y: 800,
-});
-tl5.from("#about_img", {
-  y: 800,
-  delay: 0.06,
-});
-tl6.from("#about_text", {
-  y: 800,
-  delay: 0.12,
-});
+  let tl6 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".abouttrigger",
+      start: "top center",
+      end: "280px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
+  tl4.from("#about_headline", {
+    y: 800,
+  });
+  tl5.from("#about_img", {
+    y: 800,
+    delay: 0.06,
+  });
+  tl6.from("#about_text", {
+    y: 800,
+    delay: 0.12,
+  });
 </script>
