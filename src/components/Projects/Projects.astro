@@ -26,57 +26,57 @@ const { data } = Astro.props;
 </section>
 
 <script is:inline>
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".box",
-    start: "top center",
-    end: "70px center",
-    scrub: false,
-    toggleActions: "play none none reset",
-  },
-});
-let tl1 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".box",
-    start: "top center",
-    end: "140px center",
-    scrub: false,
-    toggleActions: "play none none reset",
-  },
-});
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".box",
+      start: "top center",
+      end: "70px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
+  let tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".box",
+      start: "top center",
+      end: "280px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
 
-let tl2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".box",
-    start: "top center",
-    end: "210px center",
-    scrub: false,
-    toggleActions: "play none none reset",
-  },
-});
+  let tl2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".box",
+      start: "top center",
+      end: "210px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
+  let tl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".box",
+      start: "top center",
+      end: "140px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
 
-// let tl3 = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".box",
-//     start: "top center",
-//     end: "230px center",
-//     scrub: false,
-//     toggleActions: "play none reverse reset",
-//   },
-// });
-tl.from("#projects_headline", {
-  y: 800,
-});
-tl1.from("#project_1", {
-  y: 800,
-  delay: 0.2,
-});
-tl2.from("#project_2", {
-  y: 800,
-  delay: 0.4,
-});
-// tl3.from("#project_3", {
-//   y: 800,
-//   delay: 0.12,
-// });
+  tl.from("#projects_headline", {
+    y: 800,
+  });
+  tl1.from("#project_1", {
+    y: 800,
+    delay: 0.6,
+  });
+  tl2.from("#project_2", {
+    y: 800,
+    delay: 0.4,
+  });
+  tl3.from("#project_3", {
+    y: 800,
+    delay: 0.2,
+  });
 </script>

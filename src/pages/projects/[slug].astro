@@ -194,7 +194,7 @@ const { project } = Astro.props;
         <p class="place-self-start">{project.description_long}</p>
         <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-300 row-start 1">
           <a class="mr-2 hover:bg-primary1 hover:text-white" href={project.url} target="_blank">Demo</a>
-          <a class="hover:bg-primary1 hover:text-white" href={project.github} target="_blank">Github repo</a>
+          <a class="hover:bg-primary1 hover:text-white" href={project.github} target="_blank">{`${project.github.includes('github') ? 'GitHub' : 'GitLab'}`}</a>
         </div>
     </div>
 
@@ -261,6 +261,7 @@ const allImgSpread = [...allImg]
 const allApiLinks = Array.from(document.querySelectorAll(".api_link"))
 let setImgIndex;
 let currentIndex;
+let isGithub = allApiLinks[0].href.includes('github')
 
 // ---------------  Modal pop up ---------------
 next.addEventListener("click", nextImg)
@@ -269,6 +270,7 @@ prev.addEventListener("click", prevImg)
 allImg.forEach((img, i) => {
   const linksToAppend = allApiLinks.filter((link) => link.id === img.id);
   img.addEventListener("click", () => {
+
     close.parentElement.classList.remove("hidden");
     setImgIndex = i;
     // Set modal source
@@ -278,8 +280,7 @@ allImg.forEach((img, i) => {
     );
     // set caption 
     if (linksToAppend.length > 0) {
-
-      caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on GitHub:`
+      caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`
     } else {
 
       caption.firstElementChild.innerHTML = img.dataset.value
@@ -339,7 +340,6 @@ function prevImg() {
   );
 
   if (linksToAppend.length > 0) {
-
     caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
   } else {
 
@@ -389,7 +389,6 @@ const menuClose = document.querySelector(".closeSlide")
 
 
 burgerMenu.firstElementChild.addEventListener('click', () => {
-  console.log(`test`);
   slideMenu.classList.remove("-z-10")
   slideMenu.classList.add("z-10")
   slideMenu.classList.remove("opacity-0")

@@ -1,6 +1,103 @@
 [
   {
-    "id": "1",
+    "id": "3",
+    "name": "Tutor hotline",
+    "slug": "tutor-hotline",
+    "cover": "tutorhotline.png",
+    "cover_alt": "an image of the icon from tutor hotline",
+    "font": "Roboto",
+    "description_short": "E-commerce website",
+    "description_long": "An SaaS app for schools, who utilizes tutors in their everyday work. Making it easier to have an overview of students and driven by their questions as data.",
+    "tech_stack": [
+      {
+        "name": "NextJS",
+        "icon": "nextjs.svg",
+        "icon_alt": "nextjs icon",
+        "href": "https://nextjs.org/"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "typescript.svg",
+        "icon_alt": "typescript icon",
+        "href": "https://www.typescriptlang.org/"
+      },
+      {
+        "name": "TailwindCSS",
+        "icon": "tailwind.svg",
+        "icon_alt": "tailwindcss icon",
+        "href": "https://tailwindcss.com/"
+      },
+      {
+        "name": "Prisma",
+        "icon": "prisma.svg",
+        "icon_alt": "icon of prisma",
+        "href": "https://www.prisma.io/"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "mongodb.svg",
+        "icon_alt": "icon of prisma",
+        "href": "https://www.prisma.io/"
+      }
+    ],
+    "url": "https://web-dev-tutor.vercel.app",
+    "github": "https://gitlab.com/FlamingoFar/WebDevTutor",
+    "images": [
+      {
+        "path": "tutorhotline_1.png",
+        "alt": "this is the alt",
+        "id": "1",
+        "caption": "This is the landing page of the website.",
+        "api_link": [
+          {
+            "a_text": "Entry page",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(entry)/layout.tsx?ref_type=heads"
+          }
+        ]
+      },
+
+      {
+        "path": "tutorhotline_2.png",
+        "alt": "image of a dashboard for tutor hotline",
+        "id": "2",
+        "caption": "This is a screenshot that shows the main dashboard from a admins perspective",
+        "api_link": [
+          {
+            "a_text": "Dashboard",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(app)/page.tsx?ref_type=heads"
+          }
+        ]
+      },
+
+      {
+        "path": "tutorhotline_3.png",
+        "alt": "image showing modal for creating a question",
+        "id": "3",
+        "caption": "This is a screenshot of when the user creates a question.",
+        "api_link": [
+          {
+            "a_text": "Queue Modal",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/modules/QueueModal/QueueModal.tsx?ref_type=heads"
+          }
+        ]
+      },
+
+      {
+        "path": "tutorhotline_4.png",
+        "alt": "image of admin dashboard with users in a row",
+        "id": "4",
+        "caption": "This is the view of the admin dashboard from which users can be administered.",
+        "api_link": [
+          {
+            "a_text": "Admin dashboard",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(app)/admin/page.tsx?ref_type=heads"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
     "name": "Twitter Clone",
     "slug": "twitter-clone",
     "cover": "twitter.jpg",
@@ -8,40 +105,102 @@
     "font": "system-ui",
     "description_short": "Complete CRUD Twitter Clone",
     "description_long": "For my 5th-semester Web Development exam project, I focused on using relational databases and Python with Bottle, a lightweight web framework. This project introduced me to Python, Bottle, and SQL databases. It involved fulfilling various requirements and features, making it an important part of my academic journey.",
-    "tech_stack": [ {
-    "name": "Python",
-    "icon": "python.svg",
-    "icon_alt": "python icon"
-    ,"href":"https://www.python.org/"
-  },{
-    "name": "SQL",
-    "icon": "sql.svg",
-    "icon_alt": "sql icon"
-    ,"href":"https://developer.mozilla.org/en-US/docs/Glossary/SQL"
-  }, {
-    "name": "TailwindCSS",
-    "icon": "tailwind.svg",
-    "icon_alt": "tailwindcss icon"
-    ,"href":"https://tailwindcss.com/"
-  },{
-    "name": "JavaScript",
-    "icon": "javascript.svg",
-    "icon_alt": "js icon"
-    ,"href":"https://developer.mozilla.org/en-US/docs/Web/javascript"
-  }],
+    "tech_stack": [
+      {
+        "name": "Python",
+        "icon": "python.svg",
+        "icon_alt": "python icon",
+        "href": "https://www.python.org/"
+      },
+      {
+        "name": "SQL",
+        "icon": "sql.svg",
+        "icon_alt": "sql icon",
+        "href": "https://developer.mozilla.org/en-US/docs/Glossary/SQL"
+      },
+      {
+        "name": "TailwindCSS",
+        "icon": "tailwind.svg",
+        "icon_alt": "tailwindcss icon",
+        "href": "https://tailwindcss.com/"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "javascript.svg",
+        "icon_alt": "js icon",
+        "href": "https://developer.mozilla.org/en-US/docs/Web/javascript"
+      }
+    ],
     "url": "https://lawejo.eu.pythonanywhere.com/",
     "github": "https://github.com/lawejo/Twitter-clone",
-     "images":[
-      {"path":"twitterclone_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page from where you can login. This triggers a post request where the user credentials are verified.","api_link":[{"a_text":"Login", "a_href":"https://github.com/lawejo/Twitter-clone/blob/main/bridges/login.py"}]},
-      
-      {"path":"twitterclone_2.png","alt":"this is the alt","id":"2","caption":"This is the landing page after the user logs in. From here they can do different types of tweets, follow other users and several more actions.","api_link":[{"a_text":"Tweet","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_tweet.py"},{"a_text":"Follow","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"}]},
-      
-      {"path":"twitterclone_3.png","alt":"this is the alt","id":"3","caption":"This is the users personal page from they can see their own tweets of all types. From here they can go to edit their info or follow other users","api_link":[{"a_text":"Edit Profile","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Follow","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"}]},
-      
-      {"path":"twitterclone_4.png","alt":"this is the alt","id":"4","caption":"This is where the users can edit their information, including their profile picture and cover image.","api_link":[{"a_text":"Edit Information","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"},{"a_text":"Edit Images","a_href":"https://github.com/lawejo/Twitter-clone/blob/main/apis/api_upate_user_info_images.py"}]}]
+    "images": [
+      {
+        "path": "twitterclone_1.png",
+        "alt": "this is the alt",
+        "id": "1",
+        "caption": "This is the landing page from where you can login. This triggers a post request where the user credentials are verified.",
+        "api_link": [
+          {
+            "a_text": "Login",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/bridges/login.py"
+          }
+        ]
+      },
+
+      {
+        "path": "twitterclone_2.png",
+        "alt": "this is the alt",
+        "id": "2",
+        "caption": "This is the landing page after the user logs in. From here they can do different types of tweets, follow other users and several more actions.",
+        "api_link": [
+          {
+            "a_text": "Tweet",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/apis/api_tweet.py"
+          },
+          {
+            "a_text": "Follow",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"
+          }
+        ]
+      },
+
+      {
+        "path": "twitterclone_3.png",
+        "alt": "this is the alt",
+        "id": "3",
+        "caption": "This is the users personal page from they can see their own tweets of all types. From here they can go to edit their info or follow other users",
+        "api_link": [
+          {
+            "a_text": "Edit Profile",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"
+          },
+          {
+            "a_text": "Follow",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/apis/api_follow.py"
+          }
+        ]
+      },
+
+      {
+        "path": "twitterclone_4.png",
+        "alt": "this is the alt",
+        "id": "4",
+        "caption": "This is where the users can edit their information, including their profile picture and cover image.",
+        "api_link": [
+          {
+            "a_text": "Edit Information",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/apis/api_update_user_info.py"
+          },
+          {
+            "a_text": "Edit Images",
+            "a_href": "https://github.com/lawejo/Twitter-clone/blob/main/apis/api_upate_user_info_images.py"
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "2",
+    "id": "1",
     "name": "Disc Connection",
     "slug": "disc-connection",
     "cover": "discconnection_hero_vintage.jpg",
@@ -49,39 +208,75 @@
     "font": "Roboto",
     "description_short": "E-commerce website",
     "description_long": "For my 4th-semester project, I led the creation of a modern e-commerce site for Disc Connection. Our main goal was to improve their online presence and make the website more user-friendly. We used technologies like Next.js, SASS, GitHub, and Redux to enhance the site, showing our dedication to user-focused web development.",
-    "tech_stack": [ 
+    "tech_stack": [
       {
-    "name": "NextJS",
-    "icon": "nextjs.svg",
-    "icon_alt": "nextjs icon","href":"https://nextjs.org/"
-  }, 
-  {
-    "name": "SASS",
-    "icon": "sass.svg",
-    "icon_alt": "sass icon","href":"https://sass-lang.com/"
-  }, 
-  {
-    "name":"Stripe",
-    "icon":"stripe.svg",
-    "icon_alt":"icon of stripe","href":"https://stripe.com/en-dk"
-  }
-  ],
-    "url":"https://discconnection.vercel.app/",
-    "github":"https://github.com/lawejo/DC-WEBSITE",
-    "images":[
-      {"path":"discconnection_1.png","alt":"this is the alt","id":"1","caption":"This is the landing page website.",
-      "api_link":[
-        {"a_text":"Render Frontpage","a_href":"https://github.com/lawejo/DC-WEBSITE/blob/main/pages/index.js"}]},
+        "name": "NextJS",
+        "icon": "nextjs.svg",
+        "icon_alt": "nextjs icon",
+        "href": "https://nextjs.org/"
+      },
+      {
+        "name": "SASS",
+        "icon": "sass.svg",
+        "icon_alt": "sass icon",
+        "href": "https://sass-lang.com/"
+      },
+      {
+        "name": "Stripe",
+        "icon": "stripe.svg",
+        "icon_alt": "icon of stripe",
+        "href": "https://stripe.com/en-dk"
+      }
+    ],
+    "url": "https://discconnection.vercel.app/",
+    "github": "https://github.com/lawejo/DC-WEBSITE",
+    "images": [
+      {
+        "path": "discconnection_1.png",
+        "alt": "this is the alt",
+        "id": "1",
+        "caption": "This is the landing page website.",
+        "api_link": [
+          {
+            "a_text": "Render Frontpage",
+            "a_href": "https://github.com/lawejo/DC-WEBSITE/blob/main/pages/index.js"
+          }
+        ]
+      },
 
-      {"path":"discconnection_2.png","alt":"this is the alt","id":"2","caption":"This is a screenshot after the user has put a few items in the basket and is about to check out. This flow is from stripe.",
-      "api_link":[]},
+      {
+        "path": "discconnection_2.png",
+        "alt": "this is the alt",
+        "id": "2",
+        "caption": "This is a screenshot after the user has put a few items in the basket and is about to check out. This flow is from stripe.",
+        "api_link": []
+      },
 
-      {"path":"discconnection_3.png","alt":"this is the alt","id":"3","caption":"This is a screenshot of the users basket.",
-      "api_link":[
-        {"a_text":"Render Cart","a_href":"https://github.com/lawejo/DC-WEBSITE/blob/main/pages/cart.js"}]},
+      {
+        "path": "discconnection_3.png",
+        "alt": "this is the alt",
+        "id": "3",
+        "caption": "This is a screenshot of the users basket.",
+        "api_link": [
+          {
+            "a_text": "Render Cart",
+            "a_href": "https://github.com/lawejo/DC-WEBSITE/blob/main/pages/cart.js"
+          }
+        ]
+      },
 
-      {"path":"discconnection_4.png","alt":"this is the alt","id":"4","caption":"The product grid along with all information about the products.",
-      "api_link":[
-        {"a_text":"Render productlist","a_href":"https://github.com/lawejo/DC-WEBSITE/blob/main/pages/productList/%5Bcategory%5D.js"}]}]
+      {
+        "path": "discconnection_4.png",
+        "alt": "this is the alt",
+        "id": "4",
+        "caption": "The product grid along with all information about the products.",
+        "api_link": [
+          {
+            "a_text": "Render productlist",
+            "a_href": "https://github.com/lawejo/DC-WEBSITE/blob/main/pages/productList/%5Bcategory%5D.js"
+          }
+        ]
+      }
+    ]
   }
 ]
