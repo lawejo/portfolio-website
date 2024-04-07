@@ -7,7 +7,7 @@
     "cover_alt": "an image of the icon from tutor hotline",
     "font": "Roboto",
     "description_short": "E-commerce website",
-    "description_long": "An SaaS app for schools, who utilizes tutors in their everyday work. Making it easier to have an overview of students and driven by their questions as data.",
+    "description_long": "An SaaS app for schools, who utilizes tutors in their everyday work. Making it easier to have an overview of students and driven by their questions as data. This project was made as a group project for a sixth semester fullstack course.",
     "tech_stack": [
       {
         "name": "NextJS",
