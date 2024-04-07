@@ -36,8 +36,8 @@
       {
         "name": "MongoDB",
         "icon": "mongodb.svg",
-        "icon_alt": "icon of prisma",
-        "href": "https://www.prisma.io/"
+        "icon_alt": "icon of mongo",
+        "href": "https://www.mongodb.com/"
       }
     ],
     "url": "https://web-dev-tutor.vercel.app",

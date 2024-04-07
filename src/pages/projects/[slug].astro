@@ -204,8 +204,8 @@ const { project } = Astro.props;
     <ul class="flex flex-wrap">
       {
         project.tech_stack.map((skill) => (
-          <a href={skill.href} target="_blank">
-            <li class="w-16 mx-2 relative hint [&>div]:hover:opacity-100">
+          <a href={skill.href} target="_blank" class="flex content-center">
+            <li class="w-16 mx-2 relative hint [&>div]:hover:opacity-100 flex justify-center content-center">
               <img
                 
                 src={`../../assets/skills/${skill.icon}`}
