@@ -48,12 +48,7 @@
         "alt": "this is the alt",
         "id": "1",
         "caption": "This is the landing page of the website.",
-        "api_link": [
-          {
-            "a_text": "Entry page",
-            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(entry)/layout.tsx?ref_type=heads"
-          }
-        ]
+        "api_link": [{}]
       },
 
       {
@@ -61,12 +56,7 @@
         "alt": "image of a dashboard for tutor hotline",
         "id": "2",
         "caption": "This is a screenshot that shows the main dashboard from a admins perspective",
-        "api_link": [
-          {
-            "a_text": "Dashboard",
-            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(app)/page.tsx?ref_type=heads"
-          }
-        ]
+        "api_link": [{}]
       },
 
       {
@@ -74,12 +64,7 @@
         "alt": "image showing modal for creating a question",
         "id": "3",
         "caption": "This is a screenshot of when the user creates a question.",
-        "api_link": [
-          {
-            "a_text": "Queue Modal",
-            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/modules/QueueModal/QueueModal.tsx?ref_type=heads"
-          }
-        ]
+        "api_link": [{}]
       },
 
       {
@@ -87,12 +72,7 @@
         "alt": "image of admin dashboard with users in a row",
         "id": "4",
         "caption": "This is the view of the admin dashboard from which users can be administered.",
-        "api_link": [
-          {
-            "a_text": "Admin dashboard",
-            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(app)/admin/page.tsx?ref_type=heads"
-          }
-        ]
+        "api_link": [{}]
       }
     ]
   },

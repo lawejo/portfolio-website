@@ -261,7 +261,9 @@ const allImgSpread = [...allImg]
 const allApiLinks = Array.from(document.querySelectorAll(".api_link"))
 let setImgIndex;
 let currentIndex;
-let isGithub = allApiLinks[0].href.includes('github')
+let isGithub = allApiLinks[0].href.includes('github');
+const areLinks = allApiLinks[0].href === '';
+console.log(allApiLinks[0].href === '');
 
 // ---------------  Modal pop up ---------------
 next.addEventListener("click", nextImg)
@@ -280,7 +282,7 @@ allImg.forEach((img, i) => {
     );
     // set caption 
     if (linksToAppend.length > 0) {
-      caption.firstElementChild.innerHTML = `${img.dataset.value} View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`
+      caption.firstElementChild.innerHTML = `${img.dataset.value} ${areLinks ? '' : `View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`}`
     } else {
 
       caption.firstElementChild.innerHTML = img.dataset.value
@@ -314,7 +316,7 @@ function nextImg() {
 
   if (linksToAppend.length > 0) {
 
-    caption.firstElementChild.innerHTML = `${nextImg.dataset.value} View the code on GitHub:`
+    caption.firstElementChild.innerHTML = `${nextImg.dataset.value} ${areLinks ? '' : `View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`}`
   } else {
 
     caption.firstElementChild.innerHTML = nextImg.dataset.value
