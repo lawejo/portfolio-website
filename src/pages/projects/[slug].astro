@@ -342,7 +342,7 @@ function prevImg() {
   );
 
   if (linksToAppend.length > 0) {
-    caption.firstElementChild.innerHTML = `${prevImg.dataset.value} View the code on GitHub:`
+    caption.firstElementChild.innerHTML = `${prevImg.dataset.value} ${areLinks ? '' : `View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`}`
   } else {
 
     caption.firstElementChild.innerHTML = prevImg.dataset.value
