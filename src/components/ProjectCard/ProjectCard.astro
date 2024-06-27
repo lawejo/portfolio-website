@@ -19,16 +19,16 @@ export interface Data {
 
 <div
   id={`project_${data.id}`}
-  class="card2 w-full max-h-72 grid max-w-sm sm:max-w-lg"
+  class="card2 grid max-h-72 w-full max-w-sm sm:max-w-lg"
 >
   <div
     id=`info_${data.id}`
-    class="opacity-0 hover:opacity-100 duration-300 rounded-2xl w-full min-h-full bg-primary1 z-20 col-start-1 row-start-1 transition ease-in-out grid justify-center align-middle text-primary2 py-10 z-40"
+    class="z-20 z-40 col-start-1 row-start-1 grid min-h-full w-full justify-center rounded-2xl bg-primary1 py-10 align-middle text-primary2 opacity-0 transition duration-300 ease-in-out hover:opacity-100"
   >
-    <div class="row-start-1 col-start-1">
+    <div class="col-start-1 row-start-1">
       <h4 class="text-center text-2xl">{data.name}</h4>
 
-      <p class="text-accent1 text-center">
+      <p class="text-center text-accent1">
         {
           data.tech_stack.map((stack, index) => {
             return data.tech_stack.length === index + 1 ? (
@@ -45,18 +45,18 @@ export interface Data {
     </div>
     <a
       href=`/projects/${data.slug}`
-      class="border border-accent1 h-fit w-fit self-end justify-self-center py-2 px-6 rounded-md hover:cursor-pointer"
+      class="h-fit w-fit self-end justify-self-center rounded-md border border-accent1 px-6 py-2 hover:cursor-pointer"
       >LEARN MORE</a
     >
   </div>
 
   <div
-    class="relative overflow-hidden w-full h-[200px] sm:h-full rounded-2xl col-start-1 row-start-1 transition ease-in-out"
+    class="relative col-start-1 row-start-1 h-[200px] w-full overflow-hidden rounded-2xl transition ease-in-out sm:h-full"
   >
-    <div class="absolute top-0 left-0 w-full min-h-full bg-primary1/70 z-20">
+    <div class="absolute left-0 top-0 z-20 min-h-full w-full bg-primary1/70">
     </div>
     <img
-      class="rounded-2xl h-full w-full object-cover"
+      class="h-full w-full rounded-2xl object-cover"
       src={`assets/${data.cover}`}
       alt={data.cover_alt}
     />

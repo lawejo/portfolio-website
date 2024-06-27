@@ -5,16 +5,16 @@ const { data } = Astro.props;
 
 <section
   id="projects"
-  class="intersect box grid grid-rows-[85px_min-content] w-full h-fit pt-24 pb-36 overflow-hidden"
+  class="intersect box grid h-fit w-full grid-rows-[85px_min-content] overflow-hidden pb-36 pt-24"
 >
-  <article id="projects_headline" class="h-fit row-start-1 col-start-1">
+  <article id="projects_headline" class="col-start-1 row-start-1 h-fit">
     <h2
-      class="text-5xl font-bold font-bodyfont text-primary1 text-center md:pb-0 pb-4"
+      class="pb-4 text-center font-bodyfont text-5xl font-bold text-primary1 md:pb-0"
     >
       My Recent Work
     </h2>
   </article>
-  <div class="grid grid-cols-1 grid-rows-1 row-start-2">
+  <div class="row-start-2 grid grid-cols-1 grid-rows-1">
     <article
       class={data.length >= 3
         ? "col-start-1 row-start-1 gap-6 h-full grid xl:grid-cols-3 [&>div]:mt-4 sm:grid-cols-1 sm:h md:grid-cols-2 mx-auto"
