@@ -187,17 +187,38 @@ boxes.forEach((box) => {
 // ---------------  Dropdown menu ---------------
 
 const projectMenus = Array.from(document.querySelectorAll(".projects_menu"))
+;
+function checkScreenSize() {
+  var width = window.innerWidth;
 
-projectMenus.map((menu) => {
-  menu.addEventListener("mouseover", () => {
-    menu.lastElementChild.classList.remove("hidden");
-  })
-})
-projectMenus.map((menu) => {
-  menu.addEventListener("mouseout", () => {
-    menu.lastElementChild.classList.add("hidden");
-  })
-})
+  if (width <= 768) {
+    projectMenus.map((menu) => {
+      menu.addEventListener("click", () => {
+        menu.lastElementChild.classList.remove("hidden");
+      })
+    })
+ document.querySelector('#projects').addEventListener('click', () => {
+  projectMenus.forEach((menu) => {
+    menu.lastElementChild.classList.add('hidden');
+  });
+});
+
+  } else {
+    projectMenus.map((menu) => {
+      menu.addEventListener("mouseover", () => {
+        menu.lastElementChild.classList.remove("hidden");
+      })
+    })
+    projectMenus.map((menu) => {
+      menu.addEventListener("mouseout", () => {
+        menu.lastElementChild.classList.add("hidden");
+      })
+    })
+  }
+}
+checkScreenSize();
+window.addEventListener('resize', checkScreenSize);
+
 
 // ---------------  Burger menu ---------------
 const burgerMenu = document.querySelector(".burgerMenu")
