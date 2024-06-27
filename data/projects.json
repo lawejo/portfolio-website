@@ -1,5 +1,101 @@
 [
   {
+    "id": "4",
+    "name": "Ungdomsøen",
+    "slug": "ungdomsoen",
+    "cover": "ungdomsoen.png",
+    "cover_alt": "image of an island",
+    "font": "SportingGrotesque",
+    "description_short": "Youth-driven island project with a comprehensive digital booking and management platform.",
+    "description_long": "Ungdomsøen is a vision-driven project on an island near Copenhagen, created by and for young people. The project features a digital platform developed using SQLite for the database, Flask/Python as the backend, and SQLAlchemy for ORM. The frontend is built with React Native Expo for mobile applications and React for the web application. This platform handles bookings, resource rentals, and maintenance reporting, providing a streamlined and professional workflow for the employees managing the island.",
+    "username": "admin@ug.dk",
+    "password": "Password!1",
+    "tech_stack": [
+      {
+        "name": "Flask Python",
+        "icon": "python.svg",
+        "icon_alt": "python icon",
+        "href": "https://www.python.org/"
+      },
+      {
+        "name": "React",
+        "icon": "react.svg",
+        "icon_alt": "react icon",
+        "href": "https://www.sqlite.org/"
+      },
+      {
+        "name": "React Native",
+        "icon": "expo.svg",
+        "icon_alt": "expo icon",
+        "href": "https://expo.dev/"
+      },
+      {
+        "name": "TailwindCSS",
+        "icon": "tailwind.svg",
+        "icon_alt": "tailwindcss icon",
+        "href": "https://tailwindcss.com/"
+      }
+    ],
+    "url": "https://malteskjoldager.dk/login",
+    "github": [
+      "https://gitlab.com/magn902m/ungdomsoen.git",
+      "https://gitlab.com/magn902m/ungomsoen-mobile"
+    ],
+    "images": [
+      {
+        "path": "uo_1.png",
+        "alt": "this is the alt",
+        "id": "1",
+        "caption": "This is the landing page of the website.",
+        "api_link": [
+          {
+            "a_text": "Entry page",
+            "a_href": "https://gitlab.com/magn902m/ungdomsoen/-/blob/main/frontend/src/pages/Login/index.tsx?ref_type=heads"
+          }
+        ]
+      },
+
+      {
+        "path": "uo_2.png",
+        "alt": "image of a dashboard for uo platform",
+        "id": "2",
+        "caption": "This is a screenshot that shows the main dashboard from a admins perspective",
+        "api_link": [
+          {
+            "a_text": "Dashboard",
+            "a_href": "https://gitlab.com/magn902m/ungdomsoen/-/tree/main/frontend/src/pages/Dashboard?ref_type=heads"
+          }
+        ]
+      },
+
+      {
+        "path": "uo_3.png",
+        "alt": "image showing modal for creating a new material",
+        "id": "3",
+        "caption": "This is the view of when an admin creates a new ticket.",
+        "api_link": [
+          {
+            "a_text": "Material Modal",
+            "a_href": "https://gitlab.com/magn902m/ungdomsoen/-/blob/main/frontend/src/components/Modal/Modal.tsx?ref_type=heads"
+          }
+        ]
+      },
+
+      {
+        "path": "uo_4.png",
+        "alt": "image of tickets dashboard with all tickets",
+        "id": "4",
+        "caption": "This is the view of the tickets dashboard from where the admin can have an overview of all tickets.",
+        "api_link": [
+          {
+            "a_text": "Admin dashboard",
+            "a_href": "https://gitlab.com/magn902m/ungdomsoen/-/blob/main/frontend/src/pages/Tickets/index.tsx?ref_type=heads"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "3",
     "name": "Tutor hotline",
     "slug": "tutor-hotline",
@@ -7,7 +103,9 @@
     "cover_alt": "an image of the icon from tutor hotline",
     "font": "Roboto",
     "description_short": "E-commerce website",
-    "description_long": "An SaaS app for schools, who utilizes tutors in their everyday work. Making it easier to have an overview of students and driven by their questions as data. This project was made as a group project for a sixth semester fullstack course. If you wish to login and navigate the app you can utilize the username 'anders@example.com' and password 'Password!1'",
+    "description_long": "An SaaS app for schools, who utilizes tutors in their everyday work. Making it easier to have an overview of students and driven by their questions as data. This project was made as a group project for a sixth semester fullstack course.",
+    "username": "anders@example.com",
+    "password": "Password!1",
     "tech_stack": [
       {
         "name": "NextJS",
@@ -41,14 +139,19 @@
       }
     ],
     "url": "https://web-dev-tutor.vercel.app",
-    "github": "https://gitlab.com/FlamingoFar/WebDevTutor",
+    "github": ["https://gitlab.com/FlamingoFar/WebDevTutor"],
     "images": [
       {
         "path": "tutorhotline_1.png",
         "alt": "this is the alt",
         "id": "1",
         "caption": "This is the landing page of the website.",
-        "api_link": [{}]
+        "api_link": [
+          {
+            "a_text": "Entry page",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(entry)/layout.tsx?ref_type=heads"
+          }
+        ]
       },
 
       {
@@ -56,7 +159,12 @@
         "alt": "image of a dashboard for tutor hotline",
         "id": "2",
         "caption": "This is a screenshot that shows the main dashboard from a admins perspective",
-        "api_link": [{}]
+        "api_link": [
+          {
+            "a_text": "Dashboard",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(app)/page.tsx?ref_type=heads"
+          }
+        ]
       },
 
       {
@@ -64,7 +172,12 @@
         "alt": "image showing modal for creating a question",
         "id": "3",
         "caption": "This is a screenshot of when the user creates a question.",
-        "api_link": [{}]
+        "api_link": [
+          {
+            "a_text": "Queue Modal",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/modules/QueueModal/QueueModal.tsx?ref_type=heads"
+          }
+        ]
       },
 
       {
@@ -72,7 +185,12 @@
         "alt": "image of admin dashboard with users in a row",
         "id": "4",
         "caption": "This is the view of the admin dashboard from which users can be administered.",
-        "api_link": [{}]
+        "api_link": [
+          {
+            "a_text": "Admin dashboard",
+            "a_href": "https://gitlab.com/FlamingoFar/WebDevTutor/-/blob/main/src/app/%5Blocale%5D/(app)/admin/page.tsx?ref_type=heads"
+          }
+        ]
       }
     ]
   },
@@ -85,6 +203,8 @@
     "font": "system-ui",
     "description_short": "Complete CRUD Twitter Clone",
     "description_long": "For my 5th-semester Web Development exam project, I focused on using relational databases and Python with Bottle, a lightweight web framework. This project introduced me to Python, Bottle, and SQL databases. It involved fulfilling various requirements and features, making it an important part of my academic journey.",
+    "username": "",
+    "password": "",
     "tech_stack": [
       {
         "name": "Python",
@@ -112,7 +232,7 @@
       }
     ],
     "url": "https://lawejo.eu.pythonanywhere.com/",
-    "github": "https://github.com/lawejo/Twitter-clone",
+    "github": ["https://github.com/lawejo/Twitter-clone"],
     "images": [
       {
         "path": "twitterclone_1.png",
@@ -188,6 +308,8 @@
     "font": "Roboto",
     "description_short": "E-commerce website",
     "description_long": "For my 4th-semester project, I led the creation of a modern e-commerce site for Disc Connection. Our main goal was to improve their online presence and make the website more user-friendly. We used technologies like Next.js, SASS, GitHub, and Redux to enhance the site, showing our dedication to user-focused web development.",
+    "username": "",
+    "password": "",
     "tech_stack": [
       {
         "name": "NextJS",
@@ -209,7 +331,7 @@
       }
     ],
     "url": "https://discconnection.vercel.app/",
-    "github": "https://github.com/lawejo/DC-WEBSITE",
+    "github": ["https://github.com/lawejo/DC-WEBSITE"],
     "images": [
       {
         "path": "discconnection_1.png",

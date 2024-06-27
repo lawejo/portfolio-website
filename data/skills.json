@@ -1,87 +1,87 @@
-[  {
+[
+  {
     "name": "HTML5",
     "icon": "html-5.svg",
     "icon_alt": "html5 icon",
-    "href":"https://html.com/html5/"
+    "href": "https://html.com/html5/"
   },
   {
     "name": "CSS",
     "icon": "css-3.svg",
     "icon_alt": "css icon",
-    "href":"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
+    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
   },
   {
     "name": "JavaScript",
     "icon": "javascript.svg",
     "icon_alt": "js icon",
-    "href":"https://developer.mozilla.org/en-US/docs/Web/javascript"
-  }, 
-   {
+    "href": "https://developer.mozilla.org/en-US/docs/Web/javascript"
+  },
+  {
     "name": "NextJS",
     "icon": "nextjs.svg",
     "icon_alt": "nextjs icon",
-    "href":"https://nextjs.org/"
+    "href": "https://nextjs.org/"
   },
-   {
+  {
     "name": "Python",
     "icon": "python.svg",
     "icon_alt": "python icon",
-    "href":"https://www.python.org/"
+    "href": "https://www.python.org/"
   },
-    {
+  {
     "name": "SQL",
     "icon": "sql.svg",
     "icon_alt": "sql icon",
-    "href":"https://developer.mozilla.org/en-US/docs/Glossary/SQL"
+    "href": "https://developer.mozilla.org/en-US/docs/Glossary/SQL"
   },
   {
     "name": "SQLite",
     "icon": "sqlite.svg",
     "icon_alt": "sqlite icon",
-    "href":"https://www.sqlite.org/index.html"
+    "href": "https://www.sqlite.org/index.html"
   },
   {
     "name": "SASS",
     "icon": "sass.svg",
     "icon_alt": "sass icon",
-    "href":"https://sass-lang.com/"
+    "href": "https://sass-lang.com/"
   },
-  
+
   {
     "name": "TailwindCSS",
     "icon": "tailwind.svg",
     "icon_alt": "tailwindcss icon",
-    "href":"https://tailwindcss.com/"
+    "href": "https://tailwindcss.com/"
   },
-   {
+  {
     "name": "TypeScript",
     "icon": "typescript.svg",
     "icon_alt": "ts icon",
-    "href":"https://www.typescriptlang.org/"
+    "href": "https://www.typescriptlang.org/"
   },
-    {
+  {
     "name": "Storybook",
     "icon": "storybook.svg",
     "icon_alt": "storybook icon",
-    "href":"https://storybook.js.org/"
+    "href": "https://storybook.js.org/"
   },
   {
     "name": "Jira",
     "icon": "jira.svg",
     "icon_alt": "jira icon",
-    "href":"https://www.atlassian.com/software/jira"
+    "href": "https://www.atlassian.com/software/jira"
   },
-
   {
     "name": "NPM",
     "icon": "npm.svg",
     "icon_alt": "npm icon",
-    "href":"https://www.npmjs.com/"
+    "href": "https://www.npmjs.com/"
+  },
+  {
+    "name": "React",
+    "icon": "react.svg",
+    "icon_alt": "react icon",
+    "href": "https://react.dev/"
   }
- 
- 
-
-
-  
- 
 ]

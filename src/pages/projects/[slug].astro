@@ -192,9 +192,36 @@ const { project } = Astro.props;
     <div class="gap-6 flex flex-col">
       
         <p class="place-self-start">{project.description_long}</p>
-        <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-300 row-start 1">
+        {project.username ?  <div>
+          <p class="mb-2">If you wish to login and navigate the app you can utilize the username and password shown here:</p>
+          <p class="relative w-44">
+          <span>Username:</span> 
+          <span class="cursor-pointer transition ease-in-out ml-2" id="username">{project.username}</span>
+          <span
+              class="w-full bg-primary1 border border-white text-white absolute -top-8 left-0 z-10 text-center rounded-md flex justify-center items-center h-8 hidden"
+              >Copy to clipholder</span></p>
+          
+          
+          
+          
+          <p class="relative w-44" >
+            <span>Password:</span> 
+            <span class="cursor-pointer transition ease-in-out ml-2" id="password">{project.password}</span>
+          
+          <span
+              class="w-full bg-primary1 border border-white text-white absolute -top-8 left-0 z-10 text-center rounded-md flex justify-center items-center h-8 hidden"
+              >Copy to clipholder</span></p>
+        </div>: ''}
+       
+        <div class="[&>a]:border [&>a]:border-accent1 [&>a]:h-fit [&>a]:w-fit [&>a]:self-end [&>a]:justify-self-center [&>a]:py-2 [&>a]:px-6 [&>a]:rounded-md [&>a]:hover:cursor-pointer [&>a]:bg-white [&>a]:text-primary1 self-start [&>a]:transition [&>a]:ease-in-out [&>a]:duration-300 row-start 1 flex">
           <a class="mr-2 hover:bg-primary1 hover:text-white" href={project.url} target="_blank">Demo</a>
-          <a class="hover:bg-primary1 hover:text-white" href={project.github} target="_blank">{`${project.github.includes('github') ? 'GitHub' : 'GitLab'}`}</a>
+          <a class="hover:bg-primary1 hover:text-white mr-2" href={project.github[0]} target="_blank">{`${project.github[0].includes('github') ? 'GitHub' : 'GitLab'}`}</a>
+          
+          {project.github[1] ?
+          <a class="hover:bg-primary1 hover:text-white whitespace-nowrap" href={project.github[1]} target="_blank">{`${project.github[1].includes('github') ? 'GitHub' : 'GitLab Mobile'}`}</a>
+           
+           :
+           ``}
         </div>
     </div>
 
@@ -211,7 +238,7 @@ const { project } = Astro.props;
                 src={`../../assets/skills/${skill.icon}`}
                 alt={skill.icon_alt}
               />
-              <div class="opacity-0 rounded-lg p-2 bg-primary1 border border-accent1 text-white absolute -bottom-10 flex justify-center w-[100px] left-1/2 transform -translate-x-1/2 ease-in-out duration-300 z-50">
+              <div class="opacity-0 rounded-lg p-2 bg-primary1 border border-accent1 text-white absolute -bottom-10 flex justify-center w-fit whitespace-nowrap left-1/2 transform -translate-x-1/2 ease-in-out duration-300 z-50">
                 {skill.name}
                 </div>
             </li>
@@ -224,8 +251,9 @@ const { project } = Astro.props;
 
 
     </div>
+    
     <div
-      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-lg overflow-hidden grid grid-cols-2 grid-row-2  gap-4 lg:gap-2 min-w-[300px]"
+      class="row-start-3 lg:row-start-2 col-start-1 lg:col-start-7 col-span-full max-w-[630px] [&>img]:rounded-lg overflow-hidden grid grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 grid-rows-2 xl:grid-rows-3 lg:grid-rows-4  gap-4 lg:gap-2 min-w-[300px] lg:mb-4 xl:mb-0"
     >
       {
         project.images.map((image) => (
@@ -249,6 +277,7 @@ const { project } = Astro.props;
 </Layout>
 
 <script is:inline>
+
 const close = document.querySelector(".close");
 const modalContent = document.querySelector(".modal-content");
 const captionContainer = document.querySelector(".caption-container");
@@ -263,7 +292,48 @@ let setImgIndex;
 let currentIndex;
 let isGithub = allApiLinks[0].href.includes('github');
 const areLinks = allApiLinks[0].href === '';
-console.log(allApiLinks[0].href === '');
+const username = document.querySelector("#username");
+const password = document.querySelector("#password");
+// --------------- Copy clipholder password + username ---------------
+    
+function toggleVisibility(element, action) {
+  element.addEventListener(action, () => {
+      element.nextElementSibling.classList.toggle(
+        "hidden",
+        action === "mouseleave"
+      );
+    });
+  }
+
+  // Function to handle click events
+  function handleClick(element, otherElement) {
+    element.addEventListener("click", () => {
+      navigator.clipboard.writeText(element.innerHTML);
+      const nextElementSibling = element.nextElementSibling;
+      if (nextElementSibling !== null) {
+        nextElementSibling.innerHTML = `Copied <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" fill="none"/>
+          <path d="M5 13.3636L8.03559 16.3204C8.42388 16.6986 9.04279 16.6986 9.43108 16.3204L19 7" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+      }
+      if (
+        otherElement.nextElementSibling !== null &&
+        otherElement.nextElementSibling.innerHTML !== "Copy to clipboard"
+      ) {
+        otherElement.nextElementSibling.innerHTML = "Copy to clipboard";
+      }
+    });
+  }
+
+
+
+  toggleVisibility(username, "mouseenter");
+  toggleVisibility(username, "mouseleave");
+  toggleVisibility(password, "mouseenter");
+  toggleVisibility(password, "mouseleave");
+
+  handleClick(username, password);
+  handleClick(password, username);
 
 // ---------------  Modal pop up ---------------
 next.addEventListener("click", nextImg)
@@ -282,7 +352,7 @@ allImg.forEach((img, i) => {
     );
     // set caption 
     if (linksToAppend.length > 0) {
-      caption.firstElementChild.innerHTML = `${img.dataset.value} ${areLinks ? '' : `View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`}`
+      caption.firstElementChild.innerHTML = `${img.dataset.value} ${areLinks ? '' : determineRepoHost()}`
     } else {
 
       caption.firstElementChild.innerHTML = img.dataset.value
@@ -303,7 +373,9 @@ allImg.forEach((img, i) => {
 close.addEventListener("click", () => {
   close.parentElement.classList.add("hidden");
 });
-
+function determineRepoHost(){
+  return `View the code on ${isGithub ? 'GitHub' : 'GitLab'}`
+}
 function nextImg() {
   let nextImg = allImgSpread[setImgIndex === 3 ? setImgIndex = 0 : setImgIndex + 1]
   const linksToAppend = allApiLinks.filter((link) => link.id === nextImg.id);
@@ -316,7 +388,7 @@ function nextImg() {
 
   if (linksToAppend.length > 0) {
 
-    caption.firstElementChild.innerHTML = `${nextImg.dataset.value} ${areLinks ? '' : `View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`}`
+    caption.firstElementChild.innerHTML = `${nextImg.dataset.value} ${areLinks ? '' : determineRepoHost()}`
   } else {
 
     caption.firstElementChild.innerHTML = nextImg.dataset.value
@@ -342,7 +414,7 @@ function prevImg() {
   );
 
   if (linksToAppend.length > 0) {
-    caption.firstElementChild.innerHTML = `${prevImg.dataset.value} ${areLinks ? '' : `View the code on ${isGithub ? 'GitHub' : 'GitLab'}:`}`
+    caption.firstElementChild.innerHTML = `${prevImg.dataset.value} ${areLinks ? '' : determineRepoHost()}`
   } else {
 
     caption.firstElementChild.innerHTML = prevImg.dataset.value
@@ -415,7 +487,7 @@ for (const link of navLinks) {
   link.addEventListener('mouseover', () => {
     link.classList.add('text-gray-500');
   });
-
+  
   link.addEventListener('mouseout', () => {
     link.classList.remove('text-gray-500');
   });
@@ -437,6 +509,6 @@ cvLink.forEach((link) => {
     downloadModal.classList.remove("hidden");
   });
 });
-
+  
 </script>
 

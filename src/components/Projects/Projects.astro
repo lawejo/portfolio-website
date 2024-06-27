@@ -63,19 +63,32 @@ const { data } = Astro.props;
       toggleActions: "play none none reset",
     },
   });
+  let tl4 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".box",
+      start: "top center",
+      end: "140px center",
+      scrub: false,
+      toggleActions: "play none none reset",
+    },
+  });
 
   tl.from("#projects_headline", {
     y: 800,
   });
   tl1.from("#project_1", {
     y: 800,
-    delay: 0.6,
+    delay: 0.8,
   });
   tl2.from("#project_2", {
     y: 800,
-    delay: 0.4,
+    delay: 0.6,
   });
   tl3.from("#project_3", {
+    y: 800,
+    delay: 0.4,
+  });
+  tl4.from("#project_4", {
     y: 800,
     delay: 0.2,
   });
