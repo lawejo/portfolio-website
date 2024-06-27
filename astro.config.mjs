@@ -10,7 +10,6 @@ export default defineConfig({
     tailwind(),
     sentry({
       dsn: "https://9f83a9583e9568bef401c2148d4e1393@o4507503955083264.ingest.de.sentry.io/4507503956983888",
-      integrations: [new BrowserTracing({ tracingOrigins: ["*"] })],
       sourceMapsUploadOptions: {
         project: "javascript-astro",
         authToken: process.env.SENTRY_AUTH_TOKEN,
