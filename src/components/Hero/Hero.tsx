@@ -7,7 +7,7 @@ export default function App() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Webdeveloper", "Front End Developer"],
+      strings: ["Web Developer", "Front End Developer", "Fullstack Developer"],
       typeSpeed: 100,
       backSpeed: 20,
       smartBackspace: false,
