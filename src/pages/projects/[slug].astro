@@ -127,9 +127,9 @@ const { project } = Astro.props;
       </div>
     
     
-          <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 ease-in-out  slideMenu opacity-0 -z-10">
+          <div class="h-screen w-fit px-8 bg-primary1 border-l border-white absolute top-0 right-0 ease-in-out  slideMenu opacity-0 z-40 transition-opacity duration-300 pointer-events-none">
             <span
-        class="closeSlide absolute top-0 right-4 text-gray-100 text-4xl  hover:text-gray-400 cursor-pointer transition-all duration-300"
+        class="closeSlide absolute top-0 right-8 text-gray-100 text-4xl  hover:text-gray-400 cursor-pointer transition-all duration-300"
         >&times;</span>
         <div class="nav_links">
             <ul class="flex flex-col justify-between items-center [&>li]:pl-3 [&>*]:text-primary2 [&>li]:min-w-full [&>li]:p-4 mt-14 [&>li]:flex [&>li]:items-center [&>li]:justify-center">
@@ -178,7 +178,7 @@ const { project } = Astro.props;
   </div>
   <section id="projects"
     class="grid grid-cols-12 grid-rows-[min-content_min-content_min-content] lg:grid-rows-[min-content_min-content] lg:pl-48
-     lg:pr-32 mt-8 h-full"
+     lg:pr-32 mt-8 h-full z-30"
   >
     <h2
       class="row-start-1 text-5xl col-span-full border-b-2 border-project_gradient mb-8"
@@ -484,19 +484,21 @@ const menuClose = document.querySelector(".closeSlide")
 
 
 burgerMenu.firstElementChild.addEventListener('click', () => {
-  slideMenu.classList.remove("-z-10")
-  slideMenu.classList.add("z-10")
+  slideMenu.classList.remove("-z-50")
+  slideMenu.classList.add("z-50")
   slideMenu.classList.remove("opacity-0")
   slideMenu.classList.add("opacity-1")
-
+  slideMenu.classList.remove("pointer-events-none")
+  
 })
 
 menuClose.addEventListener('click', () => {
-
+  
   slideMenu.classList.remove("opacity-1")
   slideMenu.classList.add("opacity-0")
-  slideMenu.classList.remove("z-10")
-  slideMenu.classList.add("-z-100")
+  slideMenu.classList.remove("z-50")
+  slideMenu.classList.add("-z-50")
+  slideMenu.classList.add("pointer-events-none")
 })
 
 
