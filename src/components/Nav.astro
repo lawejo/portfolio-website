@@ -2,18 +2,18 @@
 const { bookmark } = Astro.props;
 ---
 
-<nav class="bg-primary1 w-full h-20 z-40 sticky top-0">
-  <div class="bg-primary1 grid w-full px-12 h-full">
+<nav class="sticky top-0 z-40 h-20 w-full bg-primary1">
+  <div class="grid h-full w-full bg-primary1 px-12">
     <a
-      class="ml-4 flex items-center text-offwhite text-2xl font-normal max-w-fit font-bodyfont col-start-1 max-h-ful"
+      class="max-h-ful col-start-1 ml-4 flex max-w-fit items-center font-bodyfont text-2xl font-normal text-offwhite"
       href="index.html"
     >
       LWJ
     </a>
-    <div id="end_of_nav" class="flex flex-row-reverse items-center col-start-2">
+    <div id="end_of_nav" class="col-start-2 flex flex-row-reverse items-center">
       <div id="nav_links">
         <ul
-          class="flex justify-between items-center [&>li]:pl-3 [&>*]:text-primary2"
+          class="flex items-center justify-between [&>*]:text-primary2 [&>li]:pl-3"
         >
           <li>
             <a href="index" id="home">HOME</a>
@@ -35,8 +35,8 @@ const { bookmark } = Astro.props;
     </div>
   </div>
   <div
-    class="scrollIndicator h-0.5 self-end -ml-12 bg-white/20 col-span-2 hidden"
+    class="scrollIndicator col-span-2 -ml-12 hidden h-0.5 self-end bg-white/20"
   >
-    <div class="progress bg-accent1 h-full"></div>
+    <div class="progress h-full bg-accent1"></div>
   </div>
 </nav>
