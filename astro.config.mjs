@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import sentry from "@sentry/astro";
-import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,9 +16,6 @@ export default defineConfig({
       },
     }),
   ],
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: { enabled: true }
-  }),
+
 });
 

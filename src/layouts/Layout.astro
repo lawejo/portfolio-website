@@ -51,6 +51,23 @@ const { title } = Astro.props;
       integrity="sha512-qRj8N7fxOHxPkKjnQ9EJgLJ8Ng1OK7seBn1uk8wkqaXpa7OA13LO6txQ7+ajZonyc9Ts4K/ugXljevkFTUGBcw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Lasse Jørgensens | Portfolio site" />
+    <meta
+      property="og:description"
+      content="A brief description of your portfolio."
+    />
+    <meta property="og:image" content="/hero.png" />
+    <meta property="og:url" content="https://lasseweberjorgensen.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lasse Jørgensens | Portfolio site" />
+    <meta
+      name="twitter:description"
+      content="A brief description of your portfolio."
+    />
+    <meta name="twitter:image" content="/hero.png" />
     <title>{title}</title>
   </head>
   <body
